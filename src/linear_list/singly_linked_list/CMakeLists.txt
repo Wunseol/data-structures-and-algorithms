@@ -1,0 +1,11 @@
+add_executable(singly_linked_list_v1 singly_linked_list_v1.c)
+target_compile_features(singly_linked_list_v1 PRIVATE c_std_17)
+
+add_executable(singly_linked_list_v2 singly_linked_list_v2.c)
+target_compile_features(singly_linked_list_v2 PRIVATE c_std_17)
+
+add_executable(singly_linked_list_v3 singly_linked_list_v3.cpp)
+target_compile_features(singly_linked_list_v3 PRIVATE cxx_std_17)
+
+add_executable(singly_linked_list_v4 singly_linked_list_v4.c)
+target_compile_features(singly_linked_list_v4 PRIVATE c_std_17)

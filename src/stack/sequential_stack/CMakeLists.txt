@@ -1,0 +1,8 @@
+add_executable(sequential_stack_v1 sequential_stack_v1.cpp)
+target_compile_features(sequential_stack_v1 PRIVATE cxx_std_17)
+
+add_executable(sequential_stack_v2 sequential_stack_v2.cpp)
+target_compile_features(sequential_stack_v2 PRIVATE cxx_std_17)
+
+add_executable(sequential_stack_v3 sequential_stack_v3.cpp)
+target_compile_features(sequential_stack_v3 PRIVATE cxx_std_17)

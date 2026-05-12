@@ -1,0 +1,5 @@
+add_executable(sequential_list_v2 sequential_list_v2.c)
+target_compile_features(sequential_list_v2 PRIVATE c_std_17)
+
+add_executable(sequential_list_v1 sequential_list_v1.cpp)
+target_compile_features(sequential_list_v1 PRIVATE cxx_std_17)

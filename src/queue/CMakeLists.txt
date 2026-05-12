@@ -1,0 +1,4 @@
+add_subdirectory(circular_queue)
+add_subdirectory(linked_queue)
+add_subdirectory(deque)
+add_subdirectory(priority_queue)

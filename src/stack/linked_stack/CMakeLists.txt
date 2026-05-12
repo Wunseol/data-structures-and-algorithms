@@ -1,0 +1,2 @@
+add_executable(linked_stack linked_stack_v1.cpp)
+target_compile_features(linked_stack PRIVATE cxx_std_17)

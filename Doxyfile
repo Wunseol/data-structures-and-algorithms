@@ -1,0 +1,35 @@
+PROJECT_NAME           = "Data Structures and Algorithms"
+PROJECT_NUMBER         =
+PROJECT_BRIEF          = "A comprehensive collection of data structures and algorithms implemented in C/C++"
+PROJECT_LOGO           =
+
+OUTPUT_DIRECTORY       = doc/
+
+INPUT                  = src/ tests/
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.c *.cpp *.h *.hpp
+RECURSIVE              = YES
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+HAVE_DOT               = YES
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES

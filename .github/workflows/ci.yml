@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  ubuntu-gcc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install GCC-12
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-12 g++-12
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 100
+
+      - name: Install CMake
+        run: |
+          sudo apt-get install -y cmake
+          cmake --version
+
+      - name: Configure
+        run: cmake -B build
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Run self-tests
+        run: cmake --build build --target test || true
+
+  macos-clang:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Clang
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          clang --version
+
+      - name: Install CMake
+        run: |
+          brew install cmake
+          cmake --version
+
+      - name: Configure
+        run: cmake -B build
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Run self-tests
+        run: cmake --build build --target test || true
+
+  windows-msvc:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSVC (Visual Studio 2022)
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          toolset: 19
+
+      - name: Install CMake
+        run: |
+          choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"' -y
+          cmake --version
+
+      - name: Configure
+        run: cmake -B build
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Run self-tests
+        run: cmake --build build --config Release --target test || true

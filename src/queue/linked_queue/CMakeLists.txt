@@ -1,0 +1,2 @@
+add_executable(linked_queue linked_queue_main.c linked_queue.c)
+target_compile_features(linked_queue PRIVATE c_std_17)

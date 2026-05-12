@@ -1,0 +1,2 @@
+add_subdirectory(sequential_stack)
+add_subdirectory(linked_stack)

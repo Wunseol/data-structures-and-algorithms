@@ -1,0 +1,2 @@
+add_executable(math_algorithms math_algorithms_main.cpp math_algorithms.cpp)
+target_compile_features(math_algorithms PRIVATE cxx_std_17)

@@ -1,0 +1,2 @@
+add_executable(adjacency_matrix adjacency_matrix_main.c adjacency_matrix.c)
+target_compile_features(adjacency_matrix PRIVATE c_std_17)

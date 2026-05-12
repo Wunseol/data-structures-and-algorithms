@@ -1,0 +1,2 @@
+add_executable(string_algorithm string_main.cpp)
+target_compile_features(string_algorithm PRIVATE cxx_std_17)

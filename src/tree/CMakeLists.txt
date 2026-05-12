@@ -1,0 +1,5 @@
+add_subdirectory(binary_tree)
+add_subdirectory(binary_search_tree)
+add_subdirectory(avl_tree)
+add_subdirectory(huffman_tree)
+add_subdirectory(trie)

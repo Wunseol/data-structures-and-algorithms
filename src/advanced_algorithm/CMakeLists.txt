@@ -1,0 +1,4 @@
+add_subdirectory(dynamic_programming)
+add_subdirectory(greedy)
+add_subdirectory(backtracking)
+add_subdirectory(divide_and_conquer)

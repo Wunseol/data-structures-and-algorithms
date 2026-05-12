@@ -1,0 +1,2 @@
+add_executable(priority_queue priority_queue_main.c priority_queue.c)
+target_compile_features(priority_queue PRIVATE c_std_17)
