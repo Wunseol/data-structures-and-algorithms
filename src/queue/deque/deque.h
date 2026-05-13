@@ -1,4 +1,4 @@
-#ifndef DEQUE_H
+﻿#ifndef DEQUE_H
 #define DEQUE_H
 
 #define DEQUE_MAXSIZE 100

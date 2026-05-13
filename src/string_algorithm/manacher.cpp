@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <vector>
 
@@ -68,8 +68,8 @@ void printRadiusArray(const std::string& s) {
     std::string t = preprocess(s);
     std::vector<int> p = manacher(s);
 
-    std::cout << "Ô¤´¦Àí×Ö·û´®: " << t << std::endl;
-    std::cout << "°ë¾¶Êý×é p:   [";
+    std::cout << "é¢„å¤„ç†å­—ç¬¦ä¸²: " << t << std::endl;
+    std::cout << "åŠå¾„æ•°ç»„ p:   [";
     for (size_t i = 0; i < p.size(); i++) {
         std::cout << p[i];
         if (i < p.size() - 1) std::cout << ", ";
@@ -82,34 +82,34 @@ int main() {
     std::string s;
 
     do {
-        std::cout << "\n===== ManacherËã·¨(×î³¤»ØÎÄ×Ó´®) =====" << std::endl;
-        std::cout << "1. ²éÕÒ×î³¤»ØÎÄ×Ó´®" << std::endl;
-        std::cout << "2. ÏÔÊ¾°ë¾¶Êý×é" << std::endl;
-        std::cout << "0. ÍË³ö" << std::endl;
-        std::cout << "ÇëÑ¡Ôñ: ";
+        std::cout << "\n===== Manacherç®—æ³•(æœ€é•¿å›žæ–‡å­ä¸²) =====" << std::endl;
+        std::cout << "1. æŸ¥æ‰¾æœ€é•¿å›žæ–‡å­ä¸²" << std::endl;
+        std::cout << "2. æ˜¾ç¤ºåŠå¾„æ•°ç»„" << std::endl;
+        std::cout << "0. é€€å‡º" << std::endl;
+        std::cout << "è¯·é€‰æ‹©: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1: {
-            std::cout << "ÇëÊäÈë×Ö·û´®: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²: ";
             std::cin >> s;
             auto result = longestPalindrome(s);
-            std::cout << "×î³¤»ØÎÄ×Ó´®: " << result.palindrome << std::endl;
-            std::cout << "ÆðÊ¼Î»ÖÃ: " << result.startIndex << " (0-indexed)" << std::endl;
-            std::cout << "³¤¶È: " << result.maxLength << std::endl;
+            std::cout << "æœ€é•¿å›žæ–‡å­ä¸²: " << result.palindrome << std::endl;
+            std::cout << "èµ·å§‹ä½ç½®: " << result.startIndex << " (0-indexed)" << std::endl;
+            std::cout << "é•¿åº¦: " << result.maxLength << std::endl;
             break;
         }
         case 2: {
-            std::cout << "ÇëÊäÈë×Ö·û´®: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²: ";
             std::cin >> s;
             printRadiusArray(s);
             break;
         }
         case 0:
-            std::cout << "ÍË³öManacherËã·¨" << std::endl;
+            std::cout << "é€€å‡ºManacherç®—æ³•" << std::endl;
             break;
         default:
-            std::cout << "ÎÞÐ§Ñ¡Ôñ" << std::endl;
+            std::cout << "æ— æ•ˆé€‰æ‹©" << std::endl;
         }
     } while (choice != 0);
 

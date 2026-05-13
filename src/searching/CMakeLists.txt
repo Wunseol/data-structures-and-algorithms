@@ -1,2 +1,14 @@
 add_executable(searching search_main.cpp)
 target_compile_features(searching PRIVATE cxx_std_17)
+
+add_executable(binary_search binary_search.cpp)
+target_compile_features(binary_search PRIVATE cxx_std_17)
+
+add_executable(linear_search linear_search.cpp)
+target_compile_features(linear_search PRIVATE cxx_std_17)
+
+add_executable(interpolation_search interpolation_search.cpp)
+target_compile_features(interpolation_search PRIVATE cxx_std_17)
+
+add_executable(fibonacci_search fibonacci_search.cpp)
+target_compile_features(fibonacci_search PRIVATE cxx_std_17)

@@ -1,4 +1,4 @@
-#include "union_find.h"
+ï»¿#include "union_find.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,13 +6,13 @@ UnionFind *UFCreate(int n)
 {
     UnionFind *uf = (UnionFind *)malloc(sizeof(UnionFind));
     if (uf == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         return NULL;
     }
     uf->parent = (int *)malloc(n * sizeof(int));
     uf->rank = (int *)malloc(n * sizeof(int));
     if (uf->parent == NULL || uf->rank == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         free(uf->parent);
         free(uf->rank);
         free(uf);
@@ -30,7 +30,7 @@ UnionFind *UFCreate(int n)
 int UFFind(UnionFind *uf, int x)
 {
     if (x < 0 || x >= uf->capacity) {
-        printf("ÔªËØ %d ³¬³ö·¶Î§!\n", x);
+        printf("å…ƒç´  %d è¶…å‡ºèŒƒå›´!\n", x);
         return -1;
     }
     if (uf->parent[x] != x) {

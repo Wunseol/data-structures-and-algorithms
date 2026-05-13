@@ -175,3 +175,53 @@ Self-tests should cover:
 - Normal cases (typical inputs)
 - Edge cases (empty structures, single element, boundary indices)
 - Error cases (invalid inputs, allocation failures)
+
+## Python Coding Guidelines
+
+### File Organization
+
+Each Python module follows a consistent structure:
+
+```
+module_name/
+├── __init__.py          # Package init with public exports and __all__
+├── module_name.py       # Implementation with type annotations
+└── ...
+```
+
+- All public functions must be exported in `__init__.py` with `__all__`
+- Use Python 3.10+ type annotations for all function signatures
+- Each module must include a `if __name__ == "__main__":` self-test block
+
+### Type Annotations
+
+All function signatures must include type annotations:
+
+```python
+def binary_search(arr: list[int], target: int) -> int:
+    ...
+```
+
+### Naming Conventions
+
+| Element          | Convention        | Example                    |
+|------------------|-------------------|----------------------------|
+| Modules          | `snake_case`      | `binary_search.py`         |
+| Functions        | `snake_case`      | `binary_search()`          |
+| Classes          | `PascalCase`      | `SequentialList`           |
+| Constants        | `UPPER_SNAKE`     | `MAX_CAPACITY`             |
+| Type variables   | `PascalCase`      | `T`, `KT`, `VT`           |
+
+### Complexity Annotation
+
+Every algorithm must document its time and space complexity in the docstring:
+
+```python
+def binary_search(arr: list[int], target: int) -> int:
+    """Binary search in a sorted array.
+
+    Time Complexity: O(log n)
+    Space Complexity: O(1)
+    ...
+    """
+```

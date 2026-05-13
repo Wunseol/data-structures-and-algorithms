@@ -1,4 +1,4 @@
-#include "max_heap.h"
+ï»¿#include "max_heap.h"
 #include <stdio.h>
 
 static void Swap(HeapElemType *a, HeapElemType *b)
@@ -96,10 +96,10 @@ void MaxHeapSort(HeapElemType arr[], int n)
 void HeapTraverse(const MaxHeap *H)
 {
     if (H->size == 0) {
-        printf("×î´ó¶ÑÎª¿Õ\n");
+        printf("æœ€å¤§å †ä¸ºç©º\n");
         return;
     }
-    printf("×î´ó¶ÑÔªËØ(²ãĞò): ");
+    printf("æœ€å¤§å †å…ƒç´ (å±‚åº): ");
     for (int i = 1; i <= H->size; i++)
         printf("%d ", H->data[i]);
     printf("\n");

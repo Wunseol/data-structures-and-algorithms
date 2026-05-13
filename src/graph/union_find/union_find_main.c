@@ -1,49 +1,49 @@
-#include "union_find.h"
+ï»¿#include "union_find.h"
 #include <stdio.h>
 
 static void print_menu(void)
 {
-    printf("\n========== ²¢²é¼¯²Ù×÷²Ëµ¥ ==========\n");
-    printf("  1. ´´½¨²¢²é¼¯\n");
-    printf("  2. ²éÕÒÔªËØ¸ù½Úµã\n");
-    printf("  3. ºÏ²¢Á½¸ö¼¯ºÏ\n");
-    printf("  4. ÅĞ¶ÏÁ½¸öÔªËØÊÇ·ñÁ¬Í¨\n");
-    printf("  5. ²éÑ¯Á¬Í¨·ÖÁ¿Êı\n");
-    printf("  6. ×Ô²â\n");
-    printf("  0. ÍË³ö\n");
+    printf("\n========== å¹¶æŸ¥é›†æ“ä½œèœå• ==========\n");
+    printf("  1. åˆ›å»ºå¹¶æŸ¥é›†\n");
+    printf("  2. æŸ¥æ‰¾å…ƒç´ æ ¹èŠ‚ç‚¹\n");
+    printf("  3. åˆå¹¶ä¸¤ä¸ªé›†åˆ\n");
+    printf("  4. åˆ¤æ–­ä¸¤ä¸ªå…ƒç´ æ˜¯å¦è¿é€š\n");
+    printf("  5. æŸ¥è¯¢è¿é€šåˆ†é‡æ•°\n");
+    printf("  6. è‡ªæµ‹\n");
+    printf("  0. é€€å‡º\n");
     printf("=====================================\n");
-    printf("ÇëÑ¡Ôñ²Ù×÷: ");
+    printf("è¯·é€‰æ‹©æ“ä½œ: ");
 }
 
 static void self_test(void)
 {
-    printf("\n----- ²¢²é¼¯×Ô²â -----\n");
+    printf("\n----- å¹¶æŸ¥é›†è‡ªæµ‹ -----\n");
     UnionFind *uf = UFCreate(10);
-    printf("´´½¨´óĞ¡Îª10µÄ²¢²é¼¯, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
+    printf("åˆ›å»ºå¤§å°ä¸º10çš„å¹¶æŸ¥é›†, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
 
     UFUnion(uf, 1, 2);
-    printf("ºÏ²¢ 1 ºÍ 2, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
-    printf("1 ºÍ 2 ÊÇ·ñÁ¬Í¨: %s\n", UFConnected(uf, 1, 2) ? "ÊÇ" : "·ñ");
+    printf("åˆå¹¶ 1 å’Œ 2, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
+    printf("1 å’Œ 2 æ˜¯å¦è¿é€š: %s\n", UFConnected(uf, 1, 2) ? "æ˜¯" : "å¦");
 
     UFUnion(uf, 3, 4);
-    printf("ºÏ²¢ 3 ºÍ 4, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
+    printf("åˆå¹¶ 3 å’Œ 4, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
 
     UFUnion(uf, 1, 3);
-    printf("ºÏ²¢ 1 ºÍ 3, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
-    printf("2 ºÍ 4 ÊÇ·ñÁ¬Í¨: %s\n", UFConnected(uf, 2, 4) ? "ÊÇ" : "·ñ");
-    printf("1 ºÍ 5 ÊÇ·ñÁ¬Í¨: %s\n", UFConnected(uf, 1, 5) ? "ÊÇ" : "·ñ");
+    printf("åˆå¹¶ 1 å’Œ 3, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
+    printf("2 å’Œ 4 æ˜¯å¦è¿é€š: %s\n", UFConnected(uf, 2, 4) ? "æ˜¯" : "å¦");
+    printf("1 å’Œ 5 æ˜¯å¦è¿é€š: %s\n", UFConnected(uf, 1, 5) ? "æ˜¯" : "å¦");
 
     UFUnion(uf, 5, 6);
     UFUnion(uf, 7, 8);
     UFUnion(uf, 5, 7);
-    printf("ºÏ²¢ 5-6, 7-8, 5-7, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
-    printf("6 ºÍ 8 ÊÇ·ñÁ¬Í¨: %s\n", UFConnected(uf, 6, 8) ? "ÊÇ" : "·ñ");
+    printf("åˆå¹¶ 5-6, 7-8, 5-7, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
+    printf("6 å’Œ 8 æ˜¯å¦è¿é€š: %s\n", UFConnected(uf, 6, 8) ? "æ˜¯" : "å¦");
 
-    printf("1 µÄ¸ù½Úµã: %d\n", UFFind(uf, 1));
-    printf("5 µÄ¸ù½Úµã: %d\n", UFFind(uf, 5));
+    printf("1 çš„æ ¹èŠ‚ç‚¹: %d\n", UFFind(uf, 1));
+    printf("5 çš„æ ¹èŠ‚ç‚¹: %d\n", UFFind(uf, 5));
 
     UFDestroy(uf);
-    printf("----- ×Ô²âÍê³É -----\n");
+    printf("----- è‡ªæµ‹å®Œæˆ -----\n");
 }
 
 int main(void)
@@ -57,7 +57,7 @@ int main(void)
         if (scanf("%d", &choice) != 1) {
             while (getchar() != '\n')
                 ;
-            printf("ÊäÈëÎŞĞ§£¬ÇëÖØĞÂÊäÈë\n");
+            printf("è¾“å…¥æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥\n");
             continue;
         }
 
@@ -66,68 +66,68 @@ int main(void)
             if (uf != NULL) {
                 UFDestroy(uf);
             }
-            printf("ÇëÊäÈëÔªËØ¸öÊı: ");
+            printf("è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°: ");
             if (scanf("%d", &n) != 1 || n <= 0) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             uf = UFCreate(n);
             if (uf != NULL)
-                printf("²¢²é¼¯´´½¨³É¹¦, ´óĞ¡: %d, Á¬Í¨·ÖÁ¿Êı: %d\n", n, UFCount(uf));
+                printf("å¹¶æŸ¥é›†åˆ›å»ºæˆåŠŸ, å¤§å°: %d, è¿é€šåˆ†é‡æ•°: %d\n", n, UFCount(uf));
             break;
         case 2:
             if (uf == NULL) {
-                printf("ÇëÏÈ´´½¨²¢²é¼¯\n");
+                printf("è¯·å…ˆåˆ›å»ºå¹¶æŸ¥é›†\n");
                 break;
             }
-            printf("ÇëÊäÈëÔªËØ: ");
+            printf("è¯·è¾“å…¥å…ƒç´ : ");
             if (scanf("%d", &x) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             y = UFFind(uf, x);
             if (y != -1)
-                printf("ÔªËØ %d µÄ¸ù½Úµã: %d\n", x, y);
+                printf("å…ƒç´  %d çš„æ ¹èŠ‚ç‚¹: %d\n", x, y);
             break;
         case 3:
             if (uf == NULL) {
-                printf("ÇëÏÈ´´½¨²¢²é¼¯\n");
+                printf("è¯·å…ˆåˆ›å»ºå¹¶æŸ¥é›†\n");
                 break;
             }
-            printf("ÇëÊäÈëÁ½¸öÔªËØ(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªå…ƒç´ (ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &x, &y) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             UFUnion(uf, x, y);
-            printf("ºÏ²¢Íê³É, Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
+            printf("åˆå¹¶å®Œæˆ, è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
             break;
         case 4:
             if (uf == NULL) {
-                printf("ÇëÏÈ´´½¨²¢²é¼¯\n");
+                printf("è¯·å…ˆåˆ›å»ºå¹¶æŸ¥é›†\n");
                 break;
             }
-            printf("ÇëÊäÈëÁ½¸öÔªËØ(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªå…ƒç´ (ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &x, &y) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("ÔªËØ %d ºÍ %d %sÁ¬Í¨\n", x, y, UFConnected(uf, x, y) ? "ÊÇ" : "²»");
+            printf("å…ƒç´  %d å’Œ %d %sè¿é€š\n", x, y, UFConnected(uf, x, y) ? "æ˜¯" : "ä¸");
             break;
         case 5:
             if (uf == NULL) {
-                printf("ÇëÏÈ´´½¨²¢²é¼¯\n");
+                printf("è¯·å…ˆåˆ›å»ºå¹¶æŸ¥é›†\n");
                 break;
             }
-            printf("µ±Ç°Á¬Í¨·ÖÁ¿Êı: %d\n", UFCount(uf));
+            printf("å½“å‰è¿é€šåˆ†é‡æ•°: %d\n", UFCount(uf));
             break;
         case 6:
             self_test();
@@ -135,10 +135,10 @@ int main(void)
         case 0:
             if (uf != NULL)
                 UFDestroy(uf);
-            printf("³ÌĞòÍË³ö\n");
+            printf("ç¨‹åºé€€å‡º\n");
             return 0;
         default:
-            printf("ÎŞĞ§Ñ¡Ôñ£¬ÇëÖØĞÂÊäÈë\n");
+            printf("æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             break;
         }
     }

@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 typedef struct
@@ -6,7 +6,7 @@ typedef struct
     int *data;
     int  size;
     int length;
-} SqList;//¶¨ÒåÒ»¸öË³Ğò±í
+} SqList;//å®šä¹‰ä¸€ä¸ªé¡ºåºè¡¨
 
     SqList L1;
     SqList L2;
@@ -16,7 +16,7 @@ int Reverse()
     int i,j,n,tp;
     int e,e1,e2;
     while(1){
-        printf("ÇëÊäÈë:Ë³Ğò±íºÅÊı:");
+        printf("è¯·è¾“å…¥:é¡ºåºè¡¨å·æ•°:");
         scanf("%d",&n);
         if(n==1){
             // printf("%d",ListLength(L1));
@@ -34,7 +34,7 @@ int Reverse()
 
             break;
         }else{
-            printf("ÊäÈë´íÎó,ÇëÖØĞÂÊäÈë!");
+            printf("è¾“å…¥é”™è¯¯,è¯·é‡æ–°è¾“å…¥!");
         }
     }
     DispList(L1);

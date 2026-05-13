@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <climits>
 #include <algorithm>
@@ -71,7 +71,7 @@ SubarrayInfo kadane(const vector<int>& nums) {
 }
 
 void print_array(const vector<int>& nums, int start, int end) {
-    cout << "×ÓÊı×é: [";
+    cout << "å­æ•°ç»„: [";
     for (int i = start; i <= end; i++) {
         if (i > start) cout << ", ";
         cout << nums[i];
@@ -80,13 +80,13 @@ void print_array(const vector<int>& nums, int start, int end) {
 }
 
 void menu() {
-    cout << "\n========== ×î´ó×ÓÊı×é (·ÖÖÎ) ==========" << endl;
-    cout << "1. ·ÖÖÎ·¨ O(n log n)" << endl;
-    cout << "2. KadaneËã·¨ O(n)" << endl;
-    cout << "3. ĞÔÄÜ¶Ô±È" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== æœ€å¤§å­æ•°ç»„ (åˆ†æ²») ==========" << endl;
+    cout << "1. åˆ†æ²»æ³• O(n log n)" << endl;
+    cout << "2. Kadaneç®—æ³• O(n)" << endl;
+    cout << "3. æ€§èƒ½å¯¹æ¯”" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "=======================================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -97,36 +97,36 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈëÊı×é³¤¶È: ";
+                cout << "è¾“å…¥æ•°ç»„é•¿åº¦: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÊı×éÔªËØ: ";
+                cout << "è¾“å…¥æ•°ç»„å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
                 auto res = max_subarray_dc(nums, 0, n - 1);
-                cout << "×î´ó×ÓÊı×éºÍ: " << res.max_sum << endl;
-                cout << "ÆğÊ¼Ë÷Òı: " << res.start << ", ½áÊøË÷Òı: " << res.end << endl;
+                cout << "æœ€å¤§å­æ•°ç»„å’Œ: " << res.max_sum << endl;
+                cout << "èµ·å§‹ç´¢å¼•: " << res.start << ", ç»“æŸç´¢å¼•: " << res.end << endl;
                 print_array(nums, res.start, res.end);
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈëÊı×é³¤¶È: ";
+                cout << "è¾“å…¥æ•°ç»„é•¿åº¦: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÊı×éÔªËØ: ";
+                cout << "è¾“å…¥æ•°ç»„å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
                 auto res = kadane(nums);
-                cout << "×î´ó×ÓÊı×éºÍ: " << res.max_sum << endl;
-                cout << "ÆğÊ¼Ë÷Òı: " << res.start << ", ½áÊøË÷Òı: " << res.end << endl;
+                cout << "æœ€å¤§å­æ•°ç»„å’Œ: " << res.max_sum << endl;
+                cout << "èµ·å§‹ç´¢å¼•: " << res.start << ", ç»“æŸç´¢å¼•: " << res.end << endl;
                 print_array(nums, res.start, res.end);
                 break;
             }
             case 3: {
                 int n;
-                cout << "ÊäÈëÊı×é³¤¶È: ";
+                cout << "è¾“å…¥æ•°ç»„é•¿åº¦: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÊı×éÔªËØ: ";
+                cout << "è¾“å…¥æ•°ç»„å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
 
                 auto t1 = clock();
@@ -135,18 +135,18 @@ int main() {
                 auto r2 = kadane(nums);
                 auto t3 = clock();
 
-                cout << "\n·ÖÖÎ·¨ O(n log n): ºÍ=" << r1.max_sum
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
-                cout << "Kadane O(n):       ºÍ=" << r2.max_sum
-                     << "  ºÄÊ±: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
-                cout << "\n½áÂÛ: KadaneËã·¨¸üÓÅ, ·ÖÖÎ·¨¾ßÓĞ½ÌÑ§ÒâÒå" << endl;
+                cout << "\nåˆ†æ²»æ³• O(n log n): å’Œ=" << r1.max_sum
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "Kadane O(n):       å’Œ=" << r2.max_sum
+                     << "  è€—æ—¶: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "\nç»“è®º: Kadaneç®—æ³•æ›´ä¼˜, åˆ†æ²»æ³•å…·æœ‰æ•™å­¦æ„ä¹‰" << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎŞĞ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

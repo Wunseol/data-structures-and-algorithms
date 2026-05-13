@@ -1,4 +1,4 @@
-#include "avl_tree.h"
+ï»¿#include "avl_tree.h"
 #include <cstdio>
 #include <algorithm>
 
@@ -200,10 +200,10 @@ AVLNode *AVLTree::Search(int key)
 void AVLTree::InOrder() const
 {
     if (!root_) {
-        printf("AVLÊ÷Îª¿Õ\n");
+        printf("AVLæ ‘ä¸ºç©º\n");
         return;
     }
-    printf("ÖĞĞò±éÀú: ");
+    printf("ä¸­åºéå†: ");
     InOrder(root_);
     printf("\n");
 }
@@ -211,10 +211,10 @@ void AVLTree::InOrder() const
 void AVLTree::PreOrder() const
 {
     if (!root_) {
-        printf("AVLÊ÷Îª¿Õ\n");
+        printf("AVLæ ‘ä¸ºç©º\n");
         return;
     }
-    printf("ÏÈĞò±éÀú: ");
+    printf("å…ˆåºéå†: ");
     PreOrder(root_);
     printf("\n");
 }
@@ -222,10 +222,10 @@ void AVLTree::PreOrder() const
 void AVLTree::PostOrder() const
 {
     if (!root_) {
-        printf("AVLÊ÷Îª¿Õ\n");
+        printf("AVLæ ‘ä¸ºç©º\n");
         return;
     }
-    printf("ºóĞò±éÀú: ");
+    printf("ååºéå†: ");
     PostOrder(root_);
     printf("\n");
 }

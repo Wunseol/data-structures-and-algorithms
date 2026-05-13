@@ -1,4 +1,4 @@
-#include "hash_table_open_addressing.h"
+﻿#include "hash_table_open_addressing.h"
 
 static int hash_oa(int key, int size) {
     return key % size;

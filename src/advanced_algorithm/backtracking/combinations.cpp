@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -92,17 +92,17 @@ void print_combinations(const vector<vector<int>>& combs, int max_show = 30) {
         cout << "}" << endl;
     }
     if ((int)combs.size() > max_show)
-        cout << "... »¹ÓÐ " << combs.size() - max_show << " ¸ö×éºÏÎ´ÏÔÊ¾" << endl;
+        cout << "... è¿˜æœ‰ " << combs.size() - max_show << " ä¸ªç»„åˆæœªæ˜¾ç¤º" << endl;
 }
 
 void menu() {
-    cout << "\n========== ×éºÏ ==========" << endl;
-    cout << "1. C(n,k) ´Ó1~nÖÐÑ¡k¸ö" << endl;
-    cout << "2. ¿ÉÖØ¸´×éºÏ" << endl;
-    cout << "3. ´ÓÊý×éÖÐÑ¡k¸ö (º¬È¥ÖØ)" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== ç»„åˆ ==========" << endl;
+    cout << "1. C(n,k) ä»Ž1~nä¸­é€‰kä¸ª" << endl;
+    cout << "2. å¯é‡å¤ç»„åˆ" << endl;
+    cout << "3. ä»Žæ•°ç»„ä¸­é€‰kä¸ª (å«åŽ»é‡)" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "==========================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -113,9 +113,9 @@ int main() {
         switch (choice) {
             case 1: {
                 int n, k;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
-                cout << "ÊäÈëk: ";
+                cout << "è¾“å…¥k: ";
                 cin >> k;
                 Combinations solver;
                 auto combs = solver.solve(n, k);
@@ -125,36 +125,36 @@ int main() {
             }
             case 2: {
                 int n, k;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
-                cout << "ÊäÈëk (¿ÉÖØ¸´Ñ¡È¡): ";
+                cout << "è¾“å…¥k (å¯é‡å¤é€‰å–): ";
                 cin >> k;
                 CombinationsWithRepetition solver;
                 auto combs = solver.solve(n, k);
-                cout << "¿ÉÖØ¸´×éºÏÊý: " << combs.size() << endl;
+                cout << "å¯é‡å¤ç»„åˆæ•°: " << combs.size() << endl;
                 print_combinations(combs);
                 break;
             }
             case 3: {
                 int n, k;
-                cout << "ÊäÈëÊý×é³¤¶È: ";
+                cout << "è¾“å…¥æ•°ç»„é•¿åº¦: ";
                 cin >> n;
                 vector<int> arr(n);
-                cout << "ÊäÈëÊý×éÔªËØ (¿Éº¬ÖØ¸´): ";
+                cout << "è¾“å…¥æ•°ç»„å…ƒç´  (å¯å«é‡å¤): ";
                 for (int i = 0; i < n; i++) cin >> arr[i];
-                cout << "ÊäÈëk: ";
+                cout << "è¾“å…¥k: ";
                 cin >> k;
                 CombinationsFromArray solver;
                 auto combs = solver.solve(arr, k);
-                cout << "×éºÏÊý: " << combs.size() << endl;
+                cout << "ç»„åˆæ•°: " << combs.size() << endl;
                 print_combinations(combs);
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

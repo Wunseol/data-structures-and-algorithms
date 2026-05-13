@@ -1,4 +1,4 @@
-#include "bit_manipulation.h"
+﻿#include "bit_manipulation.h"
 
 bool isOdd(int n)
 {

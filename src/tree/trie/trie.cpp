@@ -1,4 +1,4 @@
-#include "trie.h"
+﻿#include "trie.h"
 #include <cstring>
 
 TrieNode::TrieNode() : is_end(false), word_count(0)

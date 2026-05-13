@@ -1,4 +1,4 @@
-#include "priority_queue.h"
+ï»¿#include "priority_queue.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -46,12 +46,12 @@ PriorityQueue *PQCreate(int max_size)
 {
     PriorityQueue *pq = (PriorityQueue *)malloc(sizeof(PriorityQueue));
     if (pq == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         return NULL;
     }
     pq->data = (PQElemType *)malloc(max_size * sizeof(PQElemType));
     if (pq->data == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         free(pq);
         return NULL;
     }
@@ -63,7 +63,7 @@ PriorityQueue *PQCreate(int max_size)
 bool PQInsert(PriorityQueue *pq, PQElemType item)
 {
     if (pq->size >= pq->capacity) {
-        printf("ÓÅÏÈ¶ÓÁÐÒÑÂú!\n");
+        printf("ä¼˜å…ˆé˜Ÿåˆ—å·²æ»¡!\n");
         return false;
     }
     pq->data[pq->size] = item;
@@ -75,7 +75,7 @@ bool PQInsert(PriorityQueue *pq, PQElemType item)
 bool PQExtractMax(PriorityQueue *pq, PQElemType *item)
 {
     if (pq->size <= 0) {
-        printf("ÓÅÏÈ¶ÓÁÐÎª¿Õ!\n");
+        printf("ä¼˜å…ˆé˜Ÿåˆ—ä¸ºç©º!\n");
         return false;
     }
     *item = pq->data[0];
@@ -88,7 +88,7 @@ bool PQExtractMax(PriorityQueue *pq, PQElemType *item)
 bool PQPeek(PriorityQueue *pq, PQElemType *item)
 {
     if (pq->size <= 0) {
-        printf("ÓÅÏÈ¶ÓÁÐÎª¿Õ!\n");
+        printf("ä¼˜å…ˆé˜Ÿåˆ—ä¸ºç©º!\n");
         return false;
     }
     *item = pq->data[0];

@@ -1,4 +1,4 @@
-#include "linked_queue.h"
+ï»¿#include "linked_queue.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,7 +6,7 @@ void InitQueue(LinkQueue *Q)
 {
     Q->front = Q->rear = (QNode *)malloc(sizeof(QNode));
     if (!Q->front) {
-        fprintf(stderr, "ÄÚ´æ·ÖÅäÊ§°Ü\n");
+        fprintf(stderr, "å†…å­˜åˆ†é…å¤±è´¥\n");
         exit(EXIT_FAILURE);
     }
     Q->front->next = NULL;
@@ -73,10 +73,10 @@ int QueueLength(const LinkQueue *Q)
 void QueueTraverse(const LinkQueue *Q)
 {
     if (QueueEmpty(Q)) {
-        printf("¶ÓÁÐÎª¿Õ\n");
+        printf("é˜Ÿåˆ—ä¸ºç©º\n");
         return;
     }
-    printf("¶ÓÁÐÔªËØ(´Ó¶ÓÊ×µ½¶ÓÎ²): ");
+    printf("é˜Ÿåˆ—å…ƒç´ (ä»Žé˜Ÿé¦–åˆ°é˜Ÿå°¾): ");
     QNode *p = Q->front->next;
     while (p) {
         printf("%d ", p->data);

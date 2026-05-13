@@ -1,4 +1,4 @@
-#include "adjacency_matrix.h"
+ï»¿#include "adjacency_matrix.h"
 
 static int visited[MAXV];
 
@@ -13,12 +13,12 @@ static void DFS(MGraph *G, int i) {
 }
 
 void CreateMGraph(MGraph *G) {
-    printf("ÊäÈë¶¥µãÊı: ");
+    printf("è¾“å…¥é¡¶ç‚¹æ•°: ");
     scanf("%d", &G->vexnum);
-    printf("ÊäÈë±ßÊı: ");
+    printf("è¾“å…¥è¾¹æ•°: ");
     scanf("%d", &G->arcnum);
 
-    printf("ÊäÈë%d¸ö¶¥µã(Á¬Ğø×Ö·û,ÈçABCDE): ", G->vexnum);
+    printf("è¾“å…¥%dä¸ªé¡¶ç‚¹(è¿ç»­å­—ç¬¦,å¦‚ABCDE): ", G->vexnum);
     for (int i = 0; i < G->vexnum; i++) {
         scanf(" %c", &G->vexs[i]);
     }
@@ -32,7 +32,7 @@ void CreateMGraph(MGraph *G) {
         }
     }
 
-    printf("ÊäÈë%dÌõ±ß(ÆğµãÏÂ±ê ÖÕµãÏÂ±ê È¨ÖØ):\n", G->arcnum);
+    printf("è¾“å…¥%dæ¡è¾¹(èµ·ç‚¹ä¸‹æ ‡ ç»ˆç‚¹ä¸‹æ ‡ æƒé‡):\n", G->arcnum);
     for (int k = 0; k < G->arcnum; k++) {
         int i, j, w;
         scanf("%d %d %d", &i, &j, &w);
@@ -44,7 +44,7 @@ void CreateMGraph(MGraph *G) {
 void DFSTraverse(MGraph *G) {
     for (int i = 0; i < G->vexnum; i++)
         visited[i] = 0;
-    printf("DFS±éÀú: ");
+    printf("DFSéå†: ");
     for (int i = 0; i < G->vexnum; i++) {
         if (!visited[i])
             DFS(G, i);
@@ -59,7 +59,7 @@ void BFSTraverse(MGraph *G) {
     for (int i = 0; i < G->vexnum; i++)
         visited[i] = 0;
 
-    printf("BFS±éÀú: ");
+    printf("BFSéå†: ");
     for (int i = 0; i < G->vexnum; i++) {
         if (!visited[i]) {
             visited[i] = 1;
@@ -92,7 +92,7 @@ void Prim(MGraph *G, int start) {
     }
     inMST[start] = 1;
 
-    printf("Prim×îĞ¡Éú³ÉÊ÷(´Ó¶¥µã%c¿ªÊ¼):\n", G->vexs[start]);
+    printf("Primæœ€å°ç”Ÿæˆæ ‘(ä»é¡¶ç‚¹%cå¼€å§‹):\n", G->vexs[start]);
     for (int i = 1; i < G->vexnum; i++) {
         int min = INF;
         int minIdx = -1;
@@ -104,12 +104,12 @@ void Prim(MGraph *G, int start) {
         }
 
         if (minIdx == -1) {
-            printf("Í¼²»Á¬Í¨,ÎŞ·¨Éú³É×îĞ¡Éú³ÉÊ÷!\n");
+            printf("å›¾ä¸è¿é€š,æ— æ³•ç”Ÿæˆæœ€å°ç”Ÿæˆæ ‘!\n");
             return;
         }
 
         inMST[minIdx] = 1;
-        printf("±ß: %c - %c, È¨ÖØ: %d\n", G->vexs[closest[minIdx]], G->vexs[minIdx], min);
+        printf("è¾¹: %c - %c, æƒé‡: %d\n", G->vexs[closest[minIdx]], G->vexs[minIdx], min);
 
         for (int j = 0; j < G->vexnum; j++) {
             if (!inMST[j] && G->edges[minIdx][j] < lowcost[j]) {
@@ -157,14 +157,14 @@ void Dijkstra(MGraph *G, int start, int dist[], int path[]) {
         }
     }
 
-    printf("Dijkstra×î¶ÌÂ·¾¶(Ô´µã: %c):\n", G->vexs[start]);
+    printf("Dijkstraæœ€çŸ­è·¯å¾„(æºç‚¹: %c):\n", G->vexs[start]);
     for (int i = 0; i < G->vexnum; i++) {
         if (i == start) continue;
-        printf("  µ½%cµÄ×î¶Ì¾àÀë: ", G->vexs[i]);
+        printf("  åˆ°%cçš„æœ€çŸ­è·ç¦»: ", G->vexs[i]);
         if (dist[i] == INF)
-            printf("²»¿É´ï\n");
+            printf("ä¸å¯è¾¾\n");
         else {
-            printf("%d, Â·¾¶: ", dist[i]);
+            printf("%d, è·¯å¾„: ", dist[i]);
             int stack[MAXV], top = 0;
             int k = i;
             while (k != -1) {
@@ -204,15 +204,15 @@ void Floyd(MGraph *G, int dist[][MAXV], int path[][MAXV]) {
         }
     }
 
-    printf("Floyd¸÷¶¥µã¶Ô×î¶ÌÂ·¾¶:\n");
+    printf("Floydå„é¡¶ç‚¹å¯¹æœ€çŸ­è·¯å¾„:\n");
     for (int i = 0; i < G->vexnum; i++) {
         for (int j = 0; j < G->vexnum; j++) {
             if (i == j) continue;
             printf("  %c -> %c: ", G->vexs[i], G->vexs[j]);
             if (dist[i][j] == INF) {
-                printf("²»¿É´ï\n");
+                printf("ä¸å¯è¾¾\n");
             } else {
-                printf("¾àÀë=%d, Â·¾¶: ", dist[i][j]);
+                printf("è·ç¦»=%d, è·¯å¾„: ", dist[i][j]);
                 int stack[MAXV], top = 0;
                 int k = j;
                 while (k != -1) {
@@ -248,7 +248,7 @@ void TopologicalSort(MGraph *G) {
             queue[rear++] = i;
     }
 
-    printf("ÍØÆËÅÅĞò: ");
+    printf("æ‹“æ‰‘æ’åº: ");
     while (front != rear) {
         int u = queue[front++];
         printf("%c ", G->vexs[u]);
@@ -263,6 +263,6 @@ void TopologicalSort(MGraph *G) {
     }
 
     if (count < G->vexnum)
-        printf("\nÍ¼ÖĞ´æÔÚ»·,ÍØÆËÅÅĞò²»ÍêÕû!");
+        printf("\nå›¾ä¸­å­˜åœ¨ç¯,æ‹“æ‰‘æ’åºä¸å®Œæ•´!");
     printf("\n");
 }

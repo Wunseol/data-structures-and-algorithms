@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -44,13 +44,13 @@ vector<Activity> activity_selection_by_start(vector<Activity>& acts) {
 }
 
 void print_activities(const vector<Activity>& acts, const string& title) {
-    cout << title << " (¹²" << acts.size() << "¸ö»î¶¯):" << endl;
+    cout << title << " (å…±" << acts.size() << "ä¸ªæ´»åŠ¨):" << endl;
     for (auto& a : acts)
-        cout << "  »î¶¯A" << a.id << ": [" << a.start << ", " << a.end << ")" << endl;
+        cout << "  æ´»åŠ¨A" << a.id << ": [" << a.start << ", " << a.end << ")" << endl;
 }
 
 void print_timeline(const vector<Activity>& acts, int max_time) {
-    cout << "\nÊ±¼äÏß¿ÉÊÓ»¯:" << endl;
+    cout << "\næ—¶é—´çº¿å¯è§†åŒ–:" << endl;
     for (auto& a : acts) {
         cout << "A" << a.id << " ";
         for (int t = 0; t <= max_time; t++) {
@@ -64,13 +64,13 @@ void print_timeline(const vector<Activity>& acts, int max_time) {
 }
 
 void menu() {
-    cout << "\n========== »î¶¯Ñ¡Ôñ ==========" << endl;
-    cout << "1. Ì°ĞÄ (°´½áÊøÊ±¼äÅÅĞò)" << endl;
-    cout << "2. ¶Ô±È: °´¿ªÊ¼Ê±¼äÅÅĞò" << endl;
-    cout << "3. ´øÊ±¼äÏß¿ÉÊÓ»¯" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== æ´»åŠ¨é€‰æ‹© ==========" << endl;
+    cout << "1. è´ªå¿ƒ (æŒ‰ç»“æŸæ—¶é—´æ’åº)" << endl;
+    cout << "2. å¯¹æ¯”: æŒ‰å¼€å§‹æ—¶é—´æ’åº" << endl;
+    cout << "3. å¸¦æ—¶é—´çº¿å¯è§†åŒ–" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "==============================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -81,24 +81,24 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈë»î¶¯ÊıÁ¿: ";
+                cout << "è¾“å…¥æ´»åŠ¨æ•°é‡: ";
                 cin >> n;
                 vector<Activity> acts(n);
-                cout << "ÊäÈëÃ¿¸ö»î¶¯µÄ¿ªÊ¼ºÍ½áÊøÊ±¼ä:" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªæ´»åŠ¨çš„å¼€å§‹å’Œç»“æŸæ—¶é—´:" << endl;
                 for (int i = 0; i < n; i++) {
                     cin >> acts[i].start >> acts[i].end;
                     acts[i].id = i + 1;
                 }
                 auto selected = activity_selection(acts);
-                print_activities(selected, "×îÓÅÑ¡Ôñ");
+                print_activities(selected, "æœ€ä¼˜é€‰æ‹©");
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈë»î¶¯ÊıÁ¿: ";
+                cout << "è¾“å…¥æ´»åŠ¨æ•°é‡: ";
                 cin >> n;
                 vector<Activity> acts1(n), acts2(n);
-                cout << "ÊäÈëÃ¿¸ö»î¶¯µÄ¿ªÊ¼ºÍ½áÊøÊ±¼ä:" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªæ´»åŠ¨çš„å¼€å§‹å’Œç»“æŸæ—¶é—´:" << endl;
                 for (int i = 0; i < n; i++) {
                     int s, e;
                     cin >> s >> e;
@@ -107,32 +107,32 @@ int main() {
                 }
                 auto r1 = activity_selection(acts1);
                 auto r2 = activity_selection_by_start(acts2);
-                print_activities(r1, "°´½áÊøÊ±¼äÅÅĞòÌ°ĞÄ (×îÓÅ)");
-                print_activities(r2, "°´¿ªÊ¼Ê±¼äÅÅĞòÌ°ĞÄ (²»Ò»¶¨×îÓÅ)");
+                print_activities(r1, "æŒ‰ç»“æŸæ—¶é—´æ’åºè´ªå¿ƒ (æœ€ä¼˜)");
+                print_activities(r2, "æŒ‰å¼€å§‹æ—¶é—´æ’åºè´ªå¿ƒ (ä¸ä¸€å®šæœ€ä¼˜)");
                 break;
             }
             case 3: {
                 int n;
-                cout << "ÊäÈë»î¶¯ÊıÁ¿: ";
+                cout << "è¾“å…¥æ´»åŠ¨æ•°é‡: ";
                 cin >> n;
                 vector<Activity> acts(n);
                 int max_time = 0;
-                cout << "ÊäÈëÃ¿¸ö»î¶¯µÄ¿ªÊ¼ºÍ½áÊøÊ±¼ä:" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªæ´»åŠ¨çš„å¼€å§‹å’Œç»“æŸæ—¶é—´:" << endl;
                 for (int i = 0; i < n; i++) {
                     cin >> acts[i].start >> acts[i].end;
                     acts[i].id = i + 1;
                     max_time = max(max_time, acts[i].end);
                 }
                 auto selected = activity_selection(acts);
-                print_activities(selected, "×îÓÅÑ¡Ôñ");
+                print_activities(selected, "æœ€ä¼˜é€‰æ‹©");
                 print_timeline(selected, max_time);
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎŞĞ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

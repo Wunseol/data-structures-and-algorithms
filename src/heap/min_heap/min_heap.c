@@ -1,4 +1,4 @@
-#include "min_heap.h"
+ï»¿#include "min_heap.h"
 #include <stdio.h>
 
 static void Swap(HeapElemType *a, HeapElemType *b)
@@ -96,10 +96,10 @@ void MinHeapSort(HeapElemType arr[], int n)
 void HeapTraverse(const MinHeap *H)
 {
     if (H->size == 0) {
-        printf("×îĞ¡¶ÑÎª¿Õ\n");
+        printf("æœ€å°å †ä¸ºç©º\n");
         return;
     }
-    printf("×îĞ¡¶ÑÔªËØ(²ãĞò): ");
+    printf("æœ€å°å †å…ƒç´ (å±‚åº): ");
     for (int i = 1; i <= H->size; i++)
         printf("%d ", H->data[i]);
     printf("\n");

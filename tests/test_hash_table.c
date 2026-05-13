@@ -1,4 +1,4 @@
-#include "self_test.h"
+﻿#include "self_test.h"
 #include "../src/hash_table/hash_table_chaining.h"
 #include "../src/hash_table/hash_table_open_addressing.h"
 

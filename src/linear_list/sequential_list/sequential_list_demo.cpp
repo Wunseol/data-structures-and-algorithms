@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string>
 #include <iostream>
@@ -13,7 +13,7 @@ typedef struct
     int length;
 } SqList;
 
-bool InitList(SqList &L,int s);//³õÊ¼»¯
+bool InitList(SqList &L,int s);//åˆå§‹åŒ–
 int ListLength(const SqList &L);
 int Locate(const SqList &L,const ElemType &e);
 bool GetData(const SqList &L,int i,ElemType &e);

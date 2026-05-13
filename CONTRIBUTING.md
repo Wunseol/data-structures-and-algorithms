@@ -1,4 +1,4 @@
-# Contributing to Data Structures and Algorithms
+﻿# Contributing to Data Structures and Algorithms
 
 Welcome! We're excited that you'd like to contribute to this project. This document provides guidelines and instructions for contributing.
 
@@ -29,6 +29,14 @@ Welcome! We're excited that you'd like to contribute to this project. This docum
   - `.c` files use `<stdio.h>`, `<stdlib.h>`, etc.
   - `.cpp` files use `<iostream>`, `<vector>`, etc.
   - Never include C++ headers in `.c` files or vice versa
+- **File Encoding**: All source files (`.c`, `.cpp`, `.h`, `.md`, `.py`, `CMakeLists.txt`) **must** use UTF-8 encoding with BOM
+  - This ensures Chinese characters display correctly across all platforms (Windows, macOS, Linux)
+  - Do **not** use GBK, GB2312, or any other encoding
+  - The `.gitattributes` file enforces UTF-8 encoding for text files
+  - If you see garbled characters (乱码), the file is likely in the wrong encoding — convert it using:
+    ```bash
+    iconv -f GBK -t UTF-8 source_file.c > source_file_utf8.c
+    ```
 
 ## Self-Test Requirement
 
@@ -103,5 +111,25 @@ cmake --build build
 ```
 
 Make sure there are no compiler warnings or errors. If self-tests are available, run them to confirm all tests pass.
+
+## Python Contribution
+
+When contributing Python code to `python/algorithms/`:
+
+- **Python Version**: Python 3.10+ (for type annotation support)
+- **Type Annotations**: All function signatures must include type annotations
+- **Package Exports**: Add new functions to the subpackage's `__init__.py` and `__all__` list
+- **Self-Test**: Each module must include a `if __name__ == "__main__":` self-test block
+- **Dependencies**: If a module requires third-party packages, add them to `python/requirements.txt`
+- **Testing**: Run `python -m algorithms.run_all` from the `python/` directory to verify all 57 modules pass
+
+### Python Build Verification
+
+```bash
+cd python
+python -m algorithms.run_all
+```
+
+Ensure all 57 algorithm modules pass their self-tests before pushing.
 
 Thank you for contributing!

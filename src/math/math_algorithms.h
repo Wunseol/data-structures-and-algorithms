@@ -1,4 +1,4 @@
-#ifndef MATH_ALGORITHMS_H
+﻿#ifndef MATH_ALGORITHMS_H
 #define MATH_ALGORITHMS_H
 
 #include <vector>

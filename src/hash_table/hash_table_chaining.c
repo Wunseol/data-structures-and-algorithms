@@ -1,4 +1,4 @@
-#include "hash_table_chaining.h"
+﻿#include "hash_table_chaining.h"
 
 static int hash(int key, int size) {
     return key % size;

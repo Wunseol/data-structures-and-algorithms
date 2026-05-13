@@ -1,20 +1,20 @@
-#include "circular_queue.h"
+ï»¿#include "circular_queue.h"
 #include <stdio.h>
 
 static void print_menu(void)
 {
-    printf("\n========== Ñ­»·¶ÓÁĞ²Ù×÷²Ëµ¥ ==========\n");
-    printf("  1. ³õÊ¼»¯¶ÓÁĞ\n");
-    printf("  2. ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ\n");
-    printf("  3. ÅĞ¶Ï¶ÓÁĞÊÇ·ñÒÑÂú\n");
-    printf("  4. Çó¶ÓÁĞ³¤¶È\n");
-    printf("  5. Èë¶Ó\n");
-    printf("  6. ³ö¶Ó\n");
-    printf("  7. »ñÈ¡¶ÓÍ·ÔªËØ\n");
-    printf("  8. ±éÀú¶ÓÁĞ\n");
-    printf("  0. ÍË³ö\n");
+    printf("\n========== å¾ªç¯é˜Ÿåˆ—æ“ä½œèœå• ==========\n");
+    printf("  1. åˆå§‹åŒ–é˜Ÿåˆ—\n");
+    printf("  2. åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º\n");
+    printf("  3. åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦å·²æ»¡\n");
+    printf("  4. æ±‚é˜Ÿåˆ—é•¿åº¦\n");
+    printf("  5. å…¥é˜Ÿ\n");
+    printf("  6. å‡ºé˜Ÿ\n");
+    printf("  7. è·å–é˜Ÿå¤´å…ƒç´ \n");
+    printf("  8. éå†é˜Ÿåˆ—\n");
+    printf("  0. é€€å‡º\n");
     printf("======================================\n");
-    printf("ÇëÑ¡Ôñ²Ù×÷: ");
+    printf("è¯·é€‰æ‹©æ“ä½œ: ");
 }
 
 int main(void)
@@ -29,7 +29,7 @@ int main(void)
         if (scanf("%d", &choice) != 1) {
             while (getchar() != '\n')
                 ;
-            printf("ÊäÈëÎŞĞ§£¬ÇëÖØĞÂÊäÈë\n");
+            printf("è¾“å…¥æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥\n");
             continue;
         }
 
@@ -37,78 +37,78 @@ int main(void)
         case 1:
             InitQueue(&Q);
             initialized = true;
-            printf("¶ÓÁĞ³õÊ¼»¯³É¹¦\n");
+            printf("é˜Ÿåˆ—åˆå§‹åŒ–æˆåŠŸ\n");
             break;
         case 2:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
-            printf("¶ÓÁĞ%s¿Õ\n", QueueEmpty(&Q) ? "Îª" : "²»");
+            printf("é˜Ÿåˆ—%sç©º\n", QueueEmpty(&Q) ? "ä¸º" : "ä¸");
             break;
         case 3:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
-            printf("¶ÓÁĞ%sÂú\n", QueueFull(&Q) ? "ÒÑ" : "Î´");
+            printf("é˜Ÿåˆ—%sæ»¡\n", QueueFull(&Q) ? "å·²" : "æœª");
             break;
         case 4:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
-            printf("¶ÓÁĞ³¤¶ÈÎª: %d\n", QueueLength(&Q));
+            printf("é˜Ÿåˆ—é•¿åº¦ä¸º: %d\n", QueueLength(&Q));
             break;
         case 5:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
-            printf("ÇëÊäÈëÈë¶ÓÔªËØ: ");
+            printf("è¯·è¾“å…¥å…¥é˜Ÿå…ƒç´ : ");
             if (scanf("%d", &e) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             if (EnQueue(&Q, e))
-                printf("Èë¶Ó³É¹¦\n");
+                printf("å…¥é˜ŸæˆåŠŸ\n");
             else
-                printf("Èë¶ÓÊ§°Ü£¬¶ÓÁĞÒÑÂú\n");
+                printf("å…¥é˜Ÿå¤±è´¥ï¼Œé˜Ÿåˆ—å·²æ»¡\n");
             break;
         case 6:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
             if (DeQueue(&Q, &e))
-                printf("³ö¶Ó³É¹¦£¬³ö¶ÓÔªËØ: %d\n", e);
+                printf("å‡ºé˜ŸæˆåŠŸï¼Œå‡ºé˜Ÿå…ƒç´ : %d\n", e);
             else
-                printf("³ö¶ÓÊ§°Ü£¬¶ÓÁĞÎª¿Õ\n");
+                printf("å‡ºé˜Ÿå¤±è´¥ï¼Œé˜Ÿåˆ—ä¸ºç©º\n");
             break;
         case 7:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
             if (GetHead(&Q, &e))
-                printf("¶ÓÍ·ÔªËØ: %d\n", e);
+                printf("é˜Ÿå¤´å…ƒç´ : %d\n", e);
             else
-                printf("»ñÈ¡Ê§°Ü£¬¶ÓÁĞÎª¿Õ\n");
+                printf("è·å–å¤±è´¥ï¼Œé˜Ÿåˆ—ä¸ºç©º\n");
             break;
         case 8:
             if (!initialized) {
-                printf("ÇëÏÈ³õÊ¼»¯¶ÓÁĞ\n");
+                printf("è¯·å…ˆåˆå§‹åŒ–é˜Ÿåˆ—\n");
                 break;
             }
             QueueTraverse(&Q);
             break;
         case 0:
-            printf("³ÌĞòÍË³ö\n");
+            printf("ç¨‹åºé€€å‡º\n");
             return 0;
         default:
-            printf("ÎŞĞ§Ñ¡Ôñ£¬ÇëÖØĞÂÊäÈë\n");
+            printf("æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             break;
         }
     }

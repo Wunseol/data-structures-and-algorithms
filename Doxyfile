@@ -5,9 +5,9 @@ PROJECT_LOGO           =
 
 OUTPUT_DIRECTORY       = doc/
 
-INPUT                  = src/ tests/
+INPUT                  = src/ tests/ python/algorithms/
 INPUT_ENCODING         = UTF-8
-FILE_PATTERNS          = *.c *.cpp *.h *.hpp
+FILE_PATTERNS          = *.c *.cpp *.h *.hpp *.py
 RECURSIVE              = YES
 
 EXTRACT_ALL            = YES

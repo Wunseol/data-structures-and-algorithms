@@ -1,4 +1,4 @@
-#include "search_common.h"
+﻿#include "search_common.h"
 
 SearchResult linearSearch(const vector<int>& arr, int target) {
     SearchResult result;

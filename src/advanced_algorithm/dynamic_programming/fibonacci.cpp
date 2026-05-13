@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <cstring>
 #include <iomanip>
@@ -58,7 +58,7 @@ long long fib_matrix(int n) {
 }
 
 void print_fib_sequence(int n) {
-    cout << "FibonacciÐòÁÐ (0~" << n << "):" << endl;
+    cout << "Fibonacciåºåˆ— (0~" << n << "):" << endl;
     for (int i = 0; i <= n; i++) {
         cout << "F(" << i << ")=" << fib_dp(i) << "  ";
         if (i % 5 == 4) cout << endl;
@@ -67,16 +67,16 @@ void print_fib_sequence(int n) {
 }
 
 void menu() {
-    cout << "\n========== Fibonacci ÊýÁÐ ==========" << endl;
-    cout << "1. µÝ¹é·¨ (O(2^n))" << endl;
-    cout << "2. ¼ÇÒä»¯ËÑË÷ (O(n))" << endl;
-    cout << "3. DP±í·¨ (O(n))" << endl;
-    cout << "4. ¾ØÕó¿ìËÙÃÝ (O(log n))" << endl;
-    cout << "5. ´òÓ¡FibonacciÐòÁÐ" << endl;
-    cout << "6. ÐÔÄÜ¶Ô±È" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== Fibonacci æ•°åˆ— ==========" << endl;
+    cout << "1. é€’å½’æ³• (O(2^n))" << endl;
+    cout << "2. è®°å¿†åŒ–æœç´¢ (O(n))" << endl;
+    cout << "3. DPè¡¨æ³• (O(n))" << endl;
+    cout << "4. çŸ©é˜µå¿«é€Ÿå¹‚ (O(log n))" << endl;
+    cout << "5. æ‰“å°Fibonacciåºåˆ—" << endl;
+    cout << "6. æ€§èƒ½å¯¹æ¯”" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "====================================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -87,14 +87,14 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈën (½¨Òén<=45): ";
+                cout << "è¾“å…¥n (å»ºè®®n<=45): ";
                 cin >> n;
                 cout << "F(" << n << ") = " << fib_recursive(n) << endl;
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
                 FibMemo fm(n);
                 cout << "F(" << n << ") = " << fm.solve(n) << endl;
@@ -102,62 +102,62 @@ int main() {
             }
             case 3: {
                 int n;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
                 cout << "F(" << n << ") = " << fib_dp(n) << endl;
                 break;
             }
             case 4: {
                 int n;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
                 cout << "F(" << n << ") = " << fib_matrix(n) << endl;
                 break;
             }
             case 5: {
                 int n;
-                cout << "ÊäÈën: ";
+                cout << "è¾“å…¥n: ";
                 cin >> n;
                 print_fib_sequence(n);
                 break;
             }
             case 6: {
                 int n;
-                cout << "ÊäÈën (½¨Òén<=45): ";
+                cout << "è¾“å…¥n (å»ºè®®n<=45): ";
                 cin >> n;
-                cout << "\n--- ÐÔÄÜ¶Ô±È ---" << endl;
+                cout << "\n--- æ€§èƒ½å¯¹æ¯” ---" << endl;
 
                 auto t1 = clock();
                 long long r1 = fib_recursive(n);
                 auto t2 = clock();
-                cout << "µÝ¹é·¨:       F(" << n << ")=" << r1
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "é€’å½’æ³•:       F(" << n << ")=" << r1
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 
                 t1 = clock();
                 FibMemo fm(n);
                 long long r2 = fm.solve(n);
                 t2 = clock();
-                cout << "¼ÇÒä»¯ËÑË÷:   F(" << n << ")=" << r2
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "è®°å¿†åŒ–æœç´¢:   F(" << n << ")=" << r2
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 
                 t1 = clock();
                 long long r3 = fib_dp(n);
                 t2 = clock();
-                cout << "DP±í·¨:       F(" << n << ")=" << r3
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "DPè¡¨æ³•:       F(" << n << ")=" << r3
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 
                 t1 = clock();
                 long long r4 = fib_matrix(n);
                 t2 = clock();
-                cout << "¾ØÕó¿ìËÙÃÝ:   F(" << n << ")=" << r4
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "çŸ©é˜µå¿«é€Ÿå¹‚:   F(" << n << ")=" << r4
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -44,10 +44,10 @@ void printArray(const vector<int>& arr) {
 
 void showMenu() {
     cout << endl;
-    cout << "*************»ùÊýÅÅÐò(LSD)*******************" << endl;
-    cout << "1. Ö´ÐÐ»ùÊýÅÅÐò" << endl;
-    cout << "0. ÍË³ö" << endl;
-    cout << "ÇëÑ¡Ôñ²Ù×÷: ";
+    cout << "*************åŸºæ•°æŽ’åº(LSD)*******************" << endl;
+    cout << "1. æ‰§è¡ŒåŸºæ•°æŽ’åº" << endl;
+    cout << "0. é€€å‡º" << endl;
+    cout << "è¯·é€‰æ‹©æ“ä½œ: ";
 }
 
 int main() {
@@ -58,34 +58,34 @@ int main() {
 
         if (choice == 1) {
             int n;
-            cout << "ÇëÊäÈëÔªËØ¸öÊý: ";
+            cout << "è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
             cin >> n;
 
             vector<int> arr(n);
-            cout << "ÇëÊäÈë" << n << "¸ö·Ç¸ºÕûÊý: ";
+            cout << "è¯·è¾“å…¥" << n << "ä¸ªéžè´Ÿæ•´æ•°: ";
             for (int i = 0; i < n; i++) {
                 cin >> arr[i];
                 if (arr[i] < 0) {
-                    cout << "»ùÊýÅÅÐò½öÖ§³Ö·Ç¸ºÕûÊý£¬ÇëÖØÐÂÊäÈë: ";
+                    cout << "åŸºæ•°æŽ’åºä»…æ”¯æŒéžè´Ÿæ•´æ•°ï¼Œè¯·é‡æ–°è¾“å…¥: ";
                     cin >> arr[i];
                 }
             }
 
-            cout << "ÅÅÐòÇ°: ";
+            cout << "æŽ’åºå‰: ";
             printArray(arr);
 
             radixSort(arr);
 
-            cout << "»ùÊýÅÅÐò½á¹û: ";
+            cout << "åŸºæ•°æŽ’åºç»“æžœ: ";
             printArray(arr);
 
             int maxVal = *max_element(arr.begin(), arr.end());
             int d = 0;
             while (maxVal > 0) { maxVal /= 10; d++; }
-            cout << "Ê±¼ä¸´ÔÓ¶È: O(d*(n+k)) = O(" << d << "*(n+10)), ¿Õ¼ä¸´ÔÓ¶È: O(n+k)" << endl;
+            cout << "æ—¶é—´å¤æ‚åº¦: O(d*(n+k)) = O(" << d << "*(n+10)), ç©ºé—´å¤æ‚åº¦: O(n+k)" << endl;
         }
     } while (choice != 0);
 
-    cout << "³ÌÐò½áÊø" << endl;
+    cout << "ç¨‹åºç»“æŸ" << endl;
     return 0;
 }

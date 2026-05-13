@@ -1,4 +1,4 @@
-#include "self_test.h"
+﻿#include "self_test.h"
 
 static void bubble_sort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++)

@@ -1,4 +1,4 @@
-#ifndef HASH_TABLE_OPEN_ADDRESSING_H
+﻿#ifndef HASH_TABLE_OPEN_ADDRESSING_H
 #define HASH_TABLE_OPEN_ADDRESSING_H
 
 #include <stdio.h>

@@ -1,4 +1,4 @@
-#ifndef MAX_HEAP_H
+﻿#ifndef MAX_HEAP_H
 #define MAX_HEAP_H
 
 #include <stdbool.h>

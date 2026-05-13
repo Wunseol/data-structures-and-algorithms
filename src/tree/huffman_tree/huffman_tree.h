@@ -1,4 +1,4 @@
-#ifndef HUFFMAN_TREE_H
+﻿#ifndef HUFFMAN_TREE_H
 #define HUFFMAN_TREE_H
 
 #include <string>

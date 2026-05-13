@@ -1,4 +1,4 @@
-#include "circular_queue.h"
+ï»¿#include "circular_queue.h"
 #include <stdio.h>
 
 void InitQueue(SqQueue *Q)
@@ -51,10 +51,10 @@ bool GetHead(const SqQueue *Q, QElemType *e)
 void QueueTraverse(const SqQueue *Q)
 {
     if (QueueEmpty(Q)) {
-        printf("¶ÓÁÐÎª¿Õ\n");
+        printf("é˜Ÿåˆ—ä¸ºç©º\n");
         return;
     }
-    printf("¶ÓÁÐÔªËØ(´Ó¶ÓÊ×µ½¶ÓÎ²): ");
+    printf("é˜Ÿåˆ—å…ƒç´ (ä»Žé˜Ÿé¦–åˆ°é˜Ÿå°¾): ");
     int i = Q->front;
     while (i != Q->rear) {
         printf("%d ", Q->data[i]);

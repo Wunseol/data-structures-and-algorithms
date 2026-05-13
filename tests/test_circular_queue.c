@@ -1,4 +1,4 @@
-#include "self_test.h"
+﻿#include "self_test.h"
 #include "../src/queue/circular_queue/circular_queue.h"
 
 int main(void) {

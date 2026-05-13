@@ -1,25 +1,25 @@
-#include "skip_list.h"
+ï»¿#include "skip_list.h"
 #include <cstdio>
 
 static void print_menu(void)
 {
-    printf("\n========== Ìø±í²Ù×÷²Ëµ¥ ==========\n");
-    printf("  1. ²åÈëÔªËØ\n");
-    printf("  2. ²éÕÒÔªËØ\n");
-    printf("  3. É¾³ıÔªËØ\n");
-    printf("  4. ÏÔÊ¾Ìø±í\n");
-    printf("  5. ×Ô²â\n");
-    printf("  0. ÍË³ö\n");
+    printf("\n========== è·³è¡¨æ“ä½œèœå• ==========\n");
+    printf("  1. æ’å…¥å…ƒç´ \n");
+    printf("  2. æŸ¥æ‰¾å…ƒç´ \n");
+    printf("  3. åˆ é™¤å…ƒç´ \n");
+    printf("  4. æ˜¾ç¤ºè·³è¡¨\n");
+    printf("  5. è‡ªæµ‹\n");
+    printf("  0. é€€å‡º\n");
     printf("==================================\n");
-    printf("ÇëÑ¡Ôñ²Ù×÷: ");
+    printf("è¯·é€‰æ‹©æ“ä½œ: ");
 }
 
 static void self_test(void)
 {
-    printf("\n----- Ìø±í×Ô²â -----\n");
+    printf("\n----- è·³è¡¨è‡ªæµ‹ -----\n");
     SkipList sl;
 
-    printf("²åÈëÔªËØ: ");
+    printf("æ’å…¥å…ƒç´ : ");
     int keys[] = {3, 6, 7, 9, 12, 19, 17, 26, 21, 25};
     int n = sizeof(keys) / sizeof(keys[0]);
     for (int i = 0; i < n; i++) {
@@ -28,33 +28,33 @@ static void self_test(void)
     }
     printf("\n");
 
-    printf("\nÌø±í½á¹¹:\n");
+    printf("\nè·³è¡¨ç»“æ„:\n");
     sl.Display();
 
     int value;
-    printf("\n²éÕÒ 19: ");
+    printf("\næŸ¥æ‰¾ 19: ");
     if (sl.Search(19, value))
-        printf("ÕÒµ½, key=19, value=%d\n", value);
+        printf("æ‰¾åˆ°, key=19, value=%d\n", value);
     else
-        printf("Î´ÕÒµ½\n");
+        printf("æœªæ‰¾åˆ°\n");
 
-    printf("²éÕÒ 15: ");
+    printf("æŸ¥æ‰¾ 15: ");
     if (sl.Search(15, value))
-        printf("ÕÒµ½, key=15, value=%d\n", value);
+        printf("æ‰¾åˆ°, key=15, value=%d\n", value);
     else
-        printf("Î´ÕÒµ½\n");
+        printf("æœªæ‰¾åˆ°\n");
 
-    printf("\nÉ¾³ı 19: %s\n", sl.Delete(19) ? "³É¹¦" : "Ê§°Ü");
-    printf("É¾³ıºóÌø±í½á¹¹:\n");
+    printf("\nåˆ é™¤ 19: %s\n", sl.Delete(19) ? "æˆåŠŸ" : "å¤±è´¥");
+    printf("åˆ é™¤åè·³è¡¨ç»“æ„:\n");
     sl.Display();
 
-    printf("\n²éÕÒ 19: ");
+    printf("\næŸ¥æ‰¾ 19: ");
     if (sl.Search(19, value))
-        printf("ÕÒµ½, key=19, value=%d\n", value);
+        printf("æ‰¾åˆ°, key=19, value=%d\n", value);
     else
-        printf("Î´ÕÒµ½\n");
+        printf("æœªæ‰¾åˆ°\n");
 
-    printf("----- ×Ô²âÍê³É -----\n");
+    printf("----- è‡ªæµ‹å®Œæˆ -----\n");
 }
 
 int main(void)
@@ -68,47 +68,47 @@ int main(void)
         if (scanf("%d", &choice) != 1) {
             while (getchar() != '\n')
                 ;
-            printf("ÊäÈëÎŞĞ§£¬ÇëÖØĞÂÊäÈë\n");
+            printf("è¾“å…¥æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥\n");
             continue;
         }
 
         switch (choice) {
         case 1:
-            printf("ÇëÊäÈëkeyºÍvalue(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥keyå’Œvalue(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &key, &value) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             sl.Insert(key, value);
-            printf("²åÈë³É¹¦\n");
+            printf("æ’å…¥æˆåŠŸ\n");
             break;
         case 2:
-            printf("ÇëÊäÈëÒª²éÕÒµÄkey: ");
+            printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„key: ");
             if (scanf("%d", &key) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             if (sl.Search(key, value))
-                printf("ÕÒµ½, key=%d, value=%d\n", key, value);
+                printf("æ‰¾åˆ°, key=%d, value=%d\n", key, value);
             else
-                printf("Î´ÕÒµ½ key=%d\n", key);
+                printf("æœªæ‰¾åˆ° key=%d\n", key);
             break;
         case 3:
-            printf("ÇëÊäÈëÒªÉ¾³ıµÄkey: ");
+            printf("è¯·è¾“å…¥è¦åˆ é™¤çš„key: ");
             if (scanf("%d", &key) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             if (sl.Delete(key))
-                printf("É¾³ı³É¹¦\n");
+                printf("åˆ é™¤æˆåŠŸ\n");
             else
-                printf("É¾³ıÊ§°Ü, key=%d ²»´æÔÚ\n", key);
+                printf("åˆ é™¤å¤±è´¥, key=%d ä¸å­˜åœ¨\n", key);
             break;
         case 4:
             sl.Display();
@@ -117,10 +117,10 @@ int main(void)
             self_test();
             break;
         case 0:
-            printf("³ÌĞòÍË³ö\n");
+            printf("ç¨‹åºé€€å‡º\n");
             return 0;
         default:
-            printf("ÎŞĞ§Ñ¡Ôñ£¬ÇëÖØĞÂÊäÈë\n");
+            printf("æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             break;
         }
     }

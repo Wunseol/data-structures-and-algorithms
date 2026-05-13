@@ -1,2 +1,17 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Ensure C/C++ source files are treated as UTF-8
+*.c text encoding=utf-8
+*.cpp text encoding=utf-8
+*.h text encoding=utf-8
+
+# Ensure Markdown files are treated as UTF-8
+*.md text encoding=utf-8
+
+# Ensure Python files are treated as UTF-8
+*.py text encoding=utf-8
+
+# Ensure CMake files are treated as UTF-8
+CMakeLists.txt text encoding=utf-8
+*.cmake text encoding=utf-8

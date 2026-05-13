@@ -1,4 +1,4 @@
-#ifndef SKIP_LIST_H
+﻿#ifndef SKIP_LIST_H
 #define SKIP_LIST_H
 
 static constexpr int SKIPLIST_MAX_LEVEL = 16;

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <cmath>
 #include <algorithm>
@@ -94,14 +94,14 @@ void print_point(const Point& p) {
 }
 
 void menu() {
-    cout << "\n========== ×î½üµã¶Ô ==========" << endl;
-    cout << "1. ·ÖÖÎ·¨ O(n log n)" << endl;
-    cout << "2. ±©Á¦·¨ O(n^2)" << endl;
-    cout << "3. ÐÔÄÜ¶Ô±È" << endl;
-    cout << "4. Ëæ»úÉú³É²âÊÔ" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== æœ€è¿‘ç‚¹å¯¹ ==========" << endl;
+    cout << "1. åˆ†æ²»æ³• O(n log n)" << endl;
+    cout << "2. æš´åŠ›æ³• O(n^2)" << endl;
+    cout << "3. æ€§èƒ½å¯¹æ¯”" << endl;
+    cout << "4. éšæœºç”Ÿæˆæµ‹è¯•" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "===============================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -112,50 +112,50 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈëµãÊý: ";
+                cout << "è¾“å…¥ç‚¹æ•°: ";
                 cin >> n;
                 vector<Point> points(n);
-                cout << "ÊäÈëÃ¿¸öµãµÄ×ø±ê (x y):" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªç‚¹çš„åæ ‡ (x y):" << endl;
                 for (int i = 0; i < n; i++) {
                     cin >> points[i].x >> points[i].y;
                     points[i].id = i;
                 }
                 Point p1, p2;
                 double d = closest_pair_dc(points, p1, p2);
-                cout << "×î½ü¾àÀë: " << fixed << setprecision(6) << d << endl;
-                cout << "µã¶Ô: ";
+                cout << "æœ€è¿‘è·ç¦»: " << fixed << setprecision(6) << d << endl;
+                cout << "ç‚¹å¯¹: ";
                 print_point(p1);
-                cout << " ºÍ ";
+                cout << " å’Œ ";
                 print_point(p2);
                 cout << endl;
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈëµãÊý: ";
+                cout << "è¾“å…¥ç‚¹æ•°: ";
                 cin >> n;
                 vector<Point> points(n);
-                cout << "ÊäÈëÃ¿¸öµãµÄ×ø±ê (x y):" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªç‚¹çš„åæ ‡ (x y):" << endl;
                 for (int i = 0; i < n; i++) {
                     cin >> points[i].x >> points[i].y;
                     points[i].id = i;
                 }
                 Point p1, p2;
                 double d = closest_brute_full(points, p1, p2);
-                cout << "×î½ü¾àÀë: " << fixed << setprecision(6) << d << endl;
-                cout << "µã¶Ô: ";
+                cout << "æœ€è¿‘è·ç¦»: " << fixed << setprecision(6) << d << endl;
+                cout << "ç‚¹å¯¹: ";
                 print_point(p1);
-                cout << " ºÍ ";
+                cout << " å’Œ ";
                 print_point(p2);
                 cout << endl;
                 break;
             }
             case 3: {
                 int n;
-                cout << "ÊäÈëµãÊý: ";
+                cout << "è¾“å…¥ç‚¹æ•°: ";
                 cin >> n;
                 vector<Point> points(n);
-                cout << "ÊäÈëÃ¿¸öµãµÄ×ø±ê (x y):" << endl;
+                cout << "è¾“å…¥æ¯ä¸ªç‚¹çš„åæ ‡ (x y):" << endl;
                 for (int i = 0; i < n; i++) {
                     cin >> points[i].x >> points[i].y;
                     points[i].id = i;
@@ -168,18 +168,18 @@ int main() {
                 double d2 = closest_brute_full(points, p1b, p2b);
                 auto t3 = clock();
 
-                cout << "·ÖÖÎ·¨ O(n log n): ¾àÀë=" << fixed << setprecision(6) << d1
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
-                cout << "±©Á¦·¨ O(n^2):     ¾àÀë=" << d2
-                     << "  ºÄÊ±: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "åˆ†æ²»æ³• O(n log n): è·ç¦»=" << fixed << setprecision(6) << d1
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "æš´åŠ›æ³• O(n^2):     è·ç¦»=" << d2
+                     << "  è€—æ—¶: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
                 break;
             }
             case 4: {
                 int n;
                 double range;
-                cout << "ÊäÈëËæ»úµãÊý: ";
+                cout << "è¾“å…¥éšæœºç‚¹æ•°: ";
                 cin >> n;
-                cout << "ÊäÈë×ø±ê·¶Î§ (0~range): ";
+                cout << "è¾“å…¥åæ ‡èŒƒå›´ (0~range): ";
                 cin >> range;
                 vector<Point> points(n);
                 for (int i = 0; i < n; i++) {
@@ -195,22 +195,22 @@ int main() {
                 double d2 = closest_brute_full(points, p1b, p2b);
                 auto t3 = clock();
 
-                cout << "\n·ÖÖÎ·¨: ¾àÀë=" << fixed << setprecision(6) << d1
-                     << "  ºÄÊ±: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
-                cout << "±©Á¦·¨: ¾àÀë=" << d2
-                     << "  ºÄÊ±: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
-                cout << "×î½üµã¶Ô: ";
+                cout << "\nåˆ†æ²»æ³•: è·ç¦»=" << fixed << setprecision(6) << d1
+                     << "  è€—æ—¶: " << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "æš´åŠ›æ³•: è·ç¦»=" << d2
+                     << "  è€—æ—¶: " << double(t3 - t2) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+                cout << "æœ€è¿‘ç‚¹å¯¹: ";
                 print_point(p1a);
-                cout << " ºÍ ";
+                cout << " å’Œ ";
                 print_point(p2a);
                 cout << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

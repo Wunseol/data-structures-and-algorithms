@@ -1,4 +1,4 @@
-#include "self_test.h"
+﻿#include "self_test.h"
 
 static int linear_search(int arr[], int n, int target) {
     for (int i = 0; i < n; i++)

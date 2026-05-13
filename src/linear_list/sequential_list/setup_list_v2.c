@@ -1,4 +1,4 @@
-#include <stdio.h>
+Ôªø#include <stdio.h>
 #include <stdlib.h>
 #define N 20
 
@@ -16,7 +16,7 @@ struct list *create(n)
     li->length=0;
     int k=1;
     int i=0;
-    printf("º”»Î:");
+    printf("Âä†ÂÖ•:");
     for(k=1;k<=n;k++){
         scanf("%d",&li->data[i]);
         i++;
@@ -28,12 +28,12 @@ struct list *create(n)
 int main()
 {
     int n=0;
-    printf("«Î ‰»ÎÀ≥–Ú±Ì±Ì≥§:");
+    printf("ËØ∑ËæìÂÖ•È°∫Â∫èË°®Ë°®Èïø:");
     scanf("%d",&n);
     list *prt;
     int i=0;
     prt=create(n);
-    printf("Ω®¡¢µƒÀ≥–Ú±ÌŒ™:");
+    printf("Âª∫Á´ãÁöÑÈ°∫Â∫èË°®‰∏∫:");
     for(prt->length,i=0;prt->length>=1;prt->length--,i++){
         printf("%d ",prt->data[i]);
     }

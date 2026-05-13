@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <vector>
 
@@ -52,37 +52,37 @@ int main() {
     std::string text, pattern;
 
     do {
-        std::cout << "\n===== Rabin-KarpËã·¨ =====" << std::endl;
-        std::cout << "1. ËÑË÷Ä£Ê½´®" << std::endl;
-        std::cout << "0. ÍË³ö" << std::endl;
-        std::cout << "ÇëÑ¡Ôñ: ";
+        std::cout << "\n===== Rabin-Karpç®—æ³• =====" << std::endl;
+        std::cout << "1. æœç´¢æ¨¡å¼ä¸²" << std::endl;
+        std::cout << "0. é€€å‡º" << std::endl;
+        std::cout << "è¯·é€‰æ‹©: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1: {
-            std::cout << "ÇëÊäÈëÖ÷´®: ";
+            std::cout << "è¯·è¾“å…¥ä¸»ä¸²: ";
             std::cin >> text;
-            std::cout << "ÇëÊäÈëÄ£Ê½´®: ";
+            std::cout << "è¯·è¾“å…¥æ¨¡å¼ä¸²: ";
             std::cin >> pattern;
             auto positions = rabinKarpSearch(text, pattern);
             if (positions.empty()) {
-                std::cout << "Î´ÕÒµ½Æ¥Åä" << std::endl;
+                std::cout << "æœªæ‰¾åˆ°åŒ¹é…" << std::endl;
             } else {
-                std::cout << "Æ¥ÅäÎ»ÖÃ(0-indexed): ";
+                std::cout << "åŒ¹é…ä½ç½®(0-indexed): ";
                 for (size_t i = 0; i < positions.size(); i++) {
                     std::cout << positions[i];
                     if (i < positions.size() - 1) std::cout << ", ";
                 }
                 std::cout << std::endl;
-                std::cout << "¹²ÕÒµ½ " << positions.size() << " ´¦Æ¥Åä" << std::endl;
+                std::cout << "å…±æ‰¾åˆ° " << positions.size() << " å¤„åŒ¹é…" << std::endl;
             }
             break;
         }
         case 0:
-            std::cout << "ÍË³öRabin-KarpËã·¨" << std::endl;
+            std::cout << "é€€å‡ºRabin-Karpç®—æ³•" << std::endl;
             break;
         default:
-            std::cout << "ÎÞÐ§Ñ¡Ôñ" << std::endl;
+            std::cout << "æ— æ•ˆé€‰æ‹©" << std::endl;
         }
     } while (choice != 0);
 

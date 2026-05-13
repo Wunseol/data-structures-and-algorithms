@@ -1,4 +1,4 @@
-#include "search_common.h"
+ï»¿#include "search_common.h"
 #include "linear_search.cpp"
 #include "binary_search.cpp"
 #include "interpolation_search.cpp"
@@ -6,19 +6,19 @@
 
 void printResult(const SearchResult& result, int target) {
     if (result.found) {
-        cout << "ÕÒµ½Ä¿±êÖµ " << target << ", ÏÂ±ê: " << result.index
-             << ", ±È½Ï´ÎÊý: " << result.comparisons << endl;
+        cout << "æ‰¾åˆ°ç›®æ ‡å€¼ " << target << ", ä¸‹æ ‡: " << result.index
+             << ", æ¯”è¾ƒæ¬¡æ•°: " << result.comparisons << endl;
     } else {
-        cout << "Î´ÕÒµ½Ä¿±êÖµ " << target << ", ±È½Ï´ÎÊý: " << result.comparisons << endl;
+        cout << "æœªæ‰¾åˆ°ç›®æ ‡å€¼ " << target << ", æ¯”è¾ƒæ¬¡æ•°: " << result.comparisons << endl;
     }
 }
 
 void inputArray(vector<int>& arr) {
     int n;
-    cout << "ÇëÊäÈëÔªËØ¸öÊý: ";
+    cout << "è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
     cin >> n;
     arr.resize(n);
-    cout << "ÇëÊäÈë" << n << "¸öÕûÊý: ";
+    cout << "è¯·è¾“å…¥" << n << "ä¸ªæ•´æ•°: ";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
@@ -26,10 +26,10 @@ void inputArray(vector<int>& arr) {
 
 void inputSortedArray(vector<int>& arr) {
     int n;
-    cout << "ÇëÊäÈëÔªËØ¸öÊý: ";
+    cout << "è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
     cin >> n;
     arr.resize(n);
-    cout << "ÇëÊäÈë" << n << "¸öÒÑÅÅÐòµÄÕûÊý(ÉýÐò): ";
+    cout << "è¯·è¾“å…¥" << n << "ä¸ªå·²æŽ’åºçš„æ•´æ•°(å‡åº): ";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
@@ -37,17 +37,17 @@ void inputSortedArray(vector<int>& arr) {
 
 void showMenu() {
     cout << endl;
-    cout << "*************ËÑË÷Ëã·¨************************" << endl;
-    cout << "1. ÏßÐÔËÑË÷" << endl;
-    cout << "2. ÉÚ±øÏßÐÔËÑË÷" << endl;
-    cout << "3. ¶þ·ÖËÑË÷" << endl;
-    cout << "4. ÏÂ½çËÑË÷(Lower Bound)" << endl;
-    cout << "5. ÉÏ½çËÑË÷(Upper Bound)" << endl;
-    cout << "6. Ðý×ªÊý×éËÑË÷" << endl;
-    cout << "7. ²åÖµËÑË÷" << endl;
-    cout << "8. ì³²¨ÄÇÆõËÑË÷" << endl;
-    cout << "0. ÍË³ö" << endl;
-    cout << "ÇëÑ¡ÔñËÑË÷·½Ê½: ";
+    cout << "*************æœç´¢ç®—æ³•************************" << endl;
+    cout << "1. çº¿æ€§æœç´¢" << endl;
+    cout << "2. å“¨å…µçº¿æ€§æœç´¢" << endl;
+    cout << "3. äºŒåˆ†æœç´¢" << endl;
+    cout << "4. ä¸‹ç•Œæœç´¢(Lower Bound)" << endl;
+    cout << "5. ä¸Šç•Œæœç´¢(Upper Bound)" << endl;
+    cout << "6. æ—‹è½¬æ•°ç»„æœç´¢" << endl;
+    cout << "7. æ’å€¼æœç´¢" << endl;
+    cout << "8. æ–æ³¢é‚£å¥‘æœç´¢" << endl;
+    cout << "0. é€€å‡º" << endl;
+    cout << "è¯·é€‰æ‹©æœç´¢æ–¹å¼: ";
 }
 
 int main() {
@@ -65,89 +65,89 @@ int main() {
         switch (choice) {
             case 1: {
                 inputArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = linearSearch(arr, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(n)" << endl;
                 break;
             }
             case 2: {
                 inputArray(arr);
                 arrCopy = arr;
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = sentinelLinearSearch(arrCopy, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(n)" << endl;
                 break;
             }
             case 3: {
                 inputSortedArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = binarySearch(arr, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(log n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(log n)" << endl;
                 break;
             }
             case 4: {
                 inputSortedArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = lowerBound(arr, target);
                 printResult(result, target);
                 if (result.found) {
-                    cout << "(µÚÒ»¸öµÈÓÚÄ¿±êÖµµÄÔªËØÏÂ±ê)" << endl;
+                    cout << "(ç¬¬ä¸€ä¸ªç­‰äºŽç›®æ ‡å€¼çš„å…ƒç´ ä¸‹æ ‡)" << endl;
                 }
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(log n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(log n)" << endl;
                 break;
             }
             case 5: {
                 inputSortedArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = upperBound(arr, target);
                 printResult(result, target);
                 if (result.found) {
-                    cout << "(×îºóÒ»¸öµÈÓÚÄ¿±êÖµµÄÔªËØÏÂ±ê)" << endl;
+                    cout << "(æœ€åŽä¸€ä¸ªç­‰äºŽç›®æ ‡å€¼çš„å…ƒç´ ä¸‹æ ‡)" << endl;
                 }
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(log n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(log n)" << endl;
                 break;
             }
             case 6: {
                 inputArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = searchRotatedArray(arr, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(log n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(log n)" << endl;
                 break;
             }
             case 7: {
                 inputSortedArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = interpolationSearch(arr, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: Æ½¾ùO(log log n), ×î»µO(n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: å¹³å‡O(log log n), æœ€åO(n)" << endl;
                 break;
             }
             case 8: {
                 inputSortedArray(arr);
-                cout << "ÇëÊäÈëÄ¿±êÖµ: ";
+                cout << "è¯·è¾“å…¥ç›®æ ‡å€¼: ";
                 cin >> target;
                 SearchResult result = fibonacciSearch(arr, target);
                 printResult(result, target);
-                cout << "Ê±¼ä¸´ÔÓ¶È: O(log n)" << endl;
+                cout << "æ—¶é—´å¤æ‚åº¦: O(log n)" << endl;
                 break;
             }
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ£¬ÇëÖØÐÂÊäÈë!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥!" << endl;
                 break;
         }
     } while (choice != 0);
 
-    cout << "³ÌÐò½áÊø" << endl;
+    cout << "ç¨‹åºç»“æŸ" << endl;
     return 0;
 }

@@ -1,4 +1,4 @@
-#ifndef CIRCULAR_QUEUE_H
+﻿#ifndef CIRCULAR_QUEUE_H
 #define CIRCULAR_QUEUE_H
 
 #include <stdbool.h>

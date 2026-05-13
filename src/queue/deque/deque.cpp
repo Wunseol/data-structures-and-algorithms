@@ -1,4 +1,4 @@
-#include "deque.h"
+ï»¿#include "deque.h"
 #include <cstdio>
 
 void InitDeque(Deque *D)
@@ -77,10 +77,10 @@ int DequeSize(const Deque *D)
 void DequeTraverse(const Deque *D)
 {
     if (D->size == 0) {
-        printf("Ë«¶Ë¶ÓÁÐÎª¿Õ\n");
+        printf("åŒç«¯é˜Ÿåˆ—ä¸ºç©º\n");
         return;
     }
-    printf("Ë«¶Ë¶ÓÁÐÔªËØ(´ÓÇ°µ½ºó): ");
+    printf("åŒç«¯é˜Ÿåˆ—å…ƒç´ (ä»Žå‰åˆ°åŽ): ");
     int idx = D->front;
     for (int i = 0; i < D->size; i++) {
         printf("%d ", D->data[idx]);

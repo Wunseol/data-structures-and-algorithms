@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -78,37 +78,37 @@ int main() {
     std::string s1, s2;
 
     do {
-        std::cout << "\n===== ×î³¤¹«¹²×ÓÐòÁÐ(LCS) =====" << std::endl;
-        std::cout << "1. ¼ÆËãLCS" << std::endl;
-        std::cout << "2. ÏÔÊ¾DP±í" << std::endl;
-        std::cout << "0. ÍË³ö" << std::endl;
-        std::cout << "ÇëÑ¡Ôñ: ";
+        std::cout << "\n===== æœ€é•¿å…¬å…±å­åºåˆ—(LCS) =====" << std::endl;
+        std::cout << "1. è®¡ç®—LCS" << std::endl;
+        std::cout << "2. æ˜¾ç¤ºDPè¡¨" << std::endl;
+        std::cout << "0. é€€å‡º" << std::endl;
+        std::cout << "è¯·é€‰æ‹©: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1: {
-            std::cout << "ÇëÊäÈë×Ö·û´®1: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²1: ";
             std::cin >> s1;
-            std::cout << "ÇëÊäÈë×Ö·û´®2: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²2: ";
             std::cin >> s2;
             auto result = longestCommonSubsequence(s1, s2);
-            std::cout << "LCS³¤¶È: " << result.length << std::endl;
-            std::cout << "LCSÄÚÈÝ: " << result.lcs << std::endl;
+            std::cout << "LCSé•¿åº¦: " << result.length << std::endl;
+            std::cout << "LCSå†…å®¹: " << result.lcs << std::endl;
             break;
         }
         case 2: {
-            std::cout << "ÇëÊäÈë×Ö·û´®1: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²1: ";
             std::cin >> s1;
-            std::cout << "ÇëÊäÈë×Ö·û´®2: ";
+            std::cout << "è¯·è¾“å…¥å­—ç¬¦ä¸²2: ";
             std::cin >> s2;
             printDPTable(s1, s2);
             break;
         }
         case 0:
-            std::cout << "ÍË³öLCS" << std::endl;
+            std::cout << "é€€å‡ºLCS" << std::endl;
             break;
         default:
-            std::cout << "ÎÞÐ§Ñ¡Ôñ" << std::endl;
+            std::cout << "æ— æ•ˆé€‰æ‹©" << std::endl;
         }
     } while (choice != 0);
 

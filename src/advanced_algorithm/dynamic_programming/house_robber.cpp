@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -32,8 +32,8 @@ int rob_basic_optimized(const vector<int>& nums) {
 
 void rob_basic_with_path(const vector<int>& nums) {
     int n = nums.size();
-    if (n == 0) { cout << "½ð¶î: 0" << endl; return; }
-    if (n == 1) { cout << "½ð¶î: " << nums[0] << endl; cout << "ÇÀ½Ù: ·¿ÎÝ0" << endl; return; }
+    if (n == 0) { cout << "é‡‘é¢: 0" << endl; return; }
+    if (n == 1) { cout << "é‡‘é¢: " << nums[0] << endl; cout << "æŠ¢åŠ«: æˆ¿å±‹0" << endl; return; }
     vector<int> dp(n);
     vector<bool> take(n, false);
     dp[0] = nums[0]; take[0] = true;
@@ -47,8 +47,8 @@ void rob_basic_with_path(const vector<int>& nums) {
             take[i] = true;
         }
     }
-    cout << "×î´ó½ð¶î: " << dp[n - 1] << endl;
-    cout << "ÇÀ½ÙµÄ·¿ÎÝ: ";
+    cout << "æœ€å¤§é‡‘é¢: " << dp[n - 1] << endl;
+    cout << "æŠ¢åŠ«çš„æˆ¿å±‹: ";
     vector<int> houses;
     for (int i = n - 1; i >= 0;) {
         if (take[i]) {
@@ -61,7 +61,7 @@ void rob_basic_with_path(const vector<int>& nums) {
     reverse(houses.begin(), houses.end());
     for (int i = 0; i < (int)houses.size(); i++) {
         if (i > 0) cout << ", ";
-        cout << "·¿ÎÝ" << houses[i] << "(½ð¶î" << nums[houses[i]] << ")";
+        cout << "æˆ¿å±‹" << houses[i] << "(é‡‘é¢" << nums[houses[i]] << ")";
     }
     cout << endl;
 }
@@ -87,14 +87,14 @@ int rob_circular(const vector<int>& nums) {
 }
 
 void menu() {
-    cout << "\n========== ´ò¼Ò½ÙÉá ==========" << endl;
-    cout << "1. »ù±¾DP (ÏßÐÔÅÅÁÐ)" << endl;
-    cout << "2. ¿Õ¼äÓÅ»¯DP" << endl;
-    cout << "3. »ù±¾DP (º¬ÇÀ½ÙÂ·¾¶)" << endl;
-    cout << "4. »·ÐÎÅÅÁÐ (Ê×Î²ÏàÁÚ)" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== æ‰“å®¶åŠ«èˆ ==========" << endl;
+    cout << "1. åŸºæœ¬DP (çº¿æ€§æŽ’åˆ—)" << endl;
+    cout << "2. ç©ºé—´ä¼˜åŒ–DP" << endl;
+    cout << "3. åŸºæœ¬DP (å«æŠ¢åŠ«è·¯å¾„)" << endl;
+    cout << "4. çŽ¯å½¢æŽ’åˆ— (é¦–å°¾ç›¸é‚»)" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "==============================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -105,49 +105,49 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈë·¿ÎÝÊýÁ¿: ";
+                cout << "è¾“å…¥æˆ¿å±‹æ•°é‡: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÃ¿¼ä·¿ÎÝµÄ½ð¶î: ";
+                cout << "è¾“å…¥æ¯é—´æˆ¿å±‹çš„é‡‘é¢: ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "×î´ó½ð¶î: " << rob_basic(nums) << endl;
+                cout << "æœ€å¤§é‡‘é¢: " << rob_basic(nums) << endl;
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈë·¿ÎÝÊýÁ¿: ";
+                cout << "è¾“å…¥æˆ¿å±‹æ•°é‡: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÃ¿¼ä·¿ÎÝµÄ½ð¶î: ";
+                cout << "è¾“å…¥æ¯é—´æˆ¿å±‹çš„é‡‘é¢: ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "×î´ó½ð¶î: " << rob_basic_optimized(nums) << endl;
+                cout << "æœ€å¤§é‡‘é¢: " << rob_basic_optimized(nums) << endl;
                 break;
             }
             case 3: {
                 int n;
-                cout << "ÊäÈë·¿ÎÝÊýÁ¿: ";
+                cout << "è¾“å…¥æˆ¿å±‹æ•°é‡: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÃ¿¼ä·¿ÎÝµÄ½ð¶î: ";
+                cout << "è¾“å…¥æ¯é—´æˆ¿å±‹çš„é‡‘é¢: ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
                 rob_basic_with_path(nums);
                 break;
             }
             case 4: {
                 int n;
-                cout << "ÊäÈë·¿ÎÝÊýÁ¿: ";
+                cout << "è¾“å…¥æˆ¿å±‹æ•°é‡: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÃ¿¼ä·¿ÎÝµÄ½ð¶î: ";
+                cout << "è¾“å…¥æ¯é—´æˆ¿å±‹çš„é‡‘é¢: ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "×î´ó½ð¶î: " << rob_circular(nums) << endl;
+                cout << "æœ€å¤§é‡‘é¢: " << rob_circular(nums) << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

@@ -3,23 +3,22 @@ DP 算法正确性验证
 将动态规划结果与暴力法结果进行对比，验证 DP 实现的正确性
 """
 
+import sys
+from pathlib import Path
 from itertools import combinations, product
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from algorithms.dynamic_programming.fibonacci import fib_dp
+from algorithms.string_algorithm.lcs import lcs_length as lcs_dp
+from algorithms.dynamic_programming.knapsack_01 import knapsack_01 as knapsack_dp
+from algorithms.dynamic_programming.edit_distance import edit_distance as edit_distance_dp
 
 
 def fib_recursive(n: int) -> int:
     if n <= 1:
         return n
     return fib_recursive(n - 1) + fib_recursive(n - 2)
-
-
-def fib_dp(n: int) -> int:
-    if n <= 1:
-        return n
-    dp = [0] * (n + 1)
-    dp[1] = 1
-    for i in range(2, n + 1):
-        dp[i] = dp[i - 1] + dp[i - 2]
-    return dp[n]
 
 
 def lcs_brute_force(s1: str, s2: str) -> int:
@@ -34,18 +33,6 @@ def lcs_brute_force(s1: str, s2: str) -> int:
     return best
 
 
-def lcs_dp(s1: str, s2: str) -> int:
-    m, n = len(s1), len(s2)
-    dp = [[0] * (n + 1) for _ in range(m + 1)]
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if s1[i - 1] == s2[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1] + 1
-            else:
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-    return dp[m][n]
-
-
 def knapsack_brute_force(weights: list[int], values: list[int], capacity: int) -> int:
     n = len(weights)
     best = 0
@@ -56,17 +43,6 @@ def knapsack_brute_force(weights: list[int], values: list[int], capacity: int) -
             if w <= capacity:
                 best = max(best, v)
     return best
-
-
-def knapsack_dp(weights: list[int], values: list[int], capacity: int) -> int:
-    n = len(weights)
-    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
-    for i in range(1, n + 1):
-        for w in range(capacity + 1):
-            dp[i][w] = dp[i - 1][w]
-            if w >= weights[i - 1]:
-                dp[i][w] = max(dp[i][w], dp[i - 1][w - weights[i - 1]] + values[i - 1])
-    return dp[n][capacity]
 
 
 def edit_distance_recursive(s1: str, s2: str) -> int:
@@ -86,22 +62,6 @@ def edit_distance_recursive(s1: str, s2: str) -> int:
         )
 
     return _rec(m, n)
-
-
-def edit_distance_dp(s1: str, s2: str) -> int:
-    m, n = len(s1), len(s2)
-    dp = [[0] * (n + 1) for _ in range(m + 1)]
-    for i in range(m + 1):
-        dp[i][0] = i
-    for j in range(n + 1):
-        dp[0][j] = j
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if s1[i - 1] == s2[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1]
-            else:
-                dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1])
-    return dp[m][n]
 
 
 def verify_fibonacci():

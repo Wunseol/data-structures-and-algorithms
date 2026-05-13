@@ -1,4 +1,4 @@
-#ifndef ADJACENCY_MATRIX_H
+﻿#ifndef ADJACENCY_MATRIX_H
 #define ADJACENCY_MATRIX_H
 
 #include <stdio.h>

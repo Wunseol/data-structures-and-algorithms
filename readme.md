@@ -1,17 +1,36 @@
-# Data Structures and Algorithms
+﻿# Data Structures and Algorithms
 
 [![CI](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-数据结构与算法学习项目，涵盖常用数据结构的 C/C++ 实现及经典算法的多种解法。
+数据结构与算法学习项目，涵盖常用数据结构的 C/C++ 与 Python 实现及经典算法的多种解法。
 
-**[在线文档](https://your-username.github.io/data-structures-and-algorithms/)** | **[贡献指南](CONTRIBUTING.md)** | **[编码规范](CodingGuidelines.md)** | **[目录索引](DIRECTORY.md)**
+**[项目文档](docs/01-项目总览.md)** | **[贡献指南](CONTRIBUTING.md)** | **[编码规范](CodingGuidelines.md)** | **[目录索引](DIRECTORY.md)**
 
 ## 项目结构
 
 ```
 data-structures-and-algorithms/
 ├── docs/                              # 需求文档与设计文档
+│   ├── 01-项目总览.md
+│   ├── 02-学习路径与参考资料.md
+│   ├── 03-技术栈与工具链指南.md
+│   ├── 04-数据结构详解.md
+│   ├── 05-算法详解.md
+│   ├── 06-代码导读与开发指南.md
+│   ├── 07-项目演进报告.md
+│   ├── 08-项目结构优化.md
+│   ├── 09-线性表模块.md
+│   ├── 10-栈与队列模块.md
+│   ├── 11-树模块.md
+│   ├── 12-图模块.md
+│   ├── 13-哈希表模块.md
+│   ├── 14-排序算法模块.md
+│   ├── 15-搜索算法模块.md
+│   ├── 16-字符串算法模块.md
+│   ├── 17-高级算法模块.md
+│   ├── 18-代码质量优化.md
+│   └── 19-软件工程图集.md
 ├── src/
 │   ├── linear_list/                   # 线性表
 │   │   ├── sequential_list/           #   顺序表
@@ -52,7 +71,23 @@ data-structures-and-algorithms/
 │       ├── backtracking/              #   回溯法
 │       └── divide_and_conquer/        #   分治法
 ├── tests/                             # 自检测试框架与模块测试
-├── python/                            # Python 辅助实现与验证
+├── python/                            # Python 实现
+│   ├── algorithms/                    #   算法与数据结构 Python 实现
+│   │   ├── sorting/                   #     排序算法（10 种）
+│   │   ├── searching/                 #     搜索算法（4 种）
+│   │   ├── string_algorithm/          #     字符串算法（6 种）
+│   │   ├── dynamic_programming/       #     动态规划（9 种）
+│   │   ├── greedy/                    #     贪心算法（3 种）
+│   │   ├── backtracking/              #     回溯法（4 种）
+│   │   ├── divide_and_conquer/        #     分治法（2 种）
+│   │   ├── data_structures/           #     数据结构（18 种）
+│   │   ├── bit_manipulation/          #     位运算
+│   │   └── run_all.py                 #     一键测试（57 个模块）
+│   ├── sorting_comparison.py          #   排序性能比较
+│   ├── search_comparison.py           #   搜索性能比较
+│   ├── dp_verify.py                   #   DP 正确性验证
+│   ├── graph_visualization.py         #   图可视化
+│   └── hash_analysis.py               #   哈希表 ASL 分析
 ├── .clang-format                      # 代码格式化配置
 ├── .clang-tidy                        # 静态分析配置
 ├── CMakeLists.txt                     # CMake 构建配置
@@ -63,6 +98,21 @@ data-structures-and-algorithms/
 ├── .gitignore
 └── README.md
 ```
+
+## 项目文档
+
+项目提供完整的中文文档，按编号顺序阅读：
+
+| 编号 | 文档 | 说明 |
+|------|------|------|
+| 01 | [项目总览](docs/01-项目总览.md) | 项目架构、技术栈、构建与运行 |
+| 02 | [学习路径与参考资料](docs/02-学习路径与参考资料.md) | 从零开始的学习路线与权威参考 |
+| 03 | [技术栈与工具链指南](docs/03-技术栈与工具链指南.md) | CMake/GCC/Clang/Doxygen 等详解 |
+| 04 | [数据结构详解](docs/04-数据结构详解.md) | 每个数据结构的实现与 STL 对比 |
+| 05 | [算法详解](docs/05-算法详解.md) | 每个算法的原理、论文引用与 STL 对比 |
+| 06 | [代码导读与开发指南](docs/06-代码导读与开发指南.md) | 开发环境搭建、CMake、工具链配置 |
+| 07 | [项目演进报告](docs/07-项目演进报告.md) | 版本历史、技术债务与未来规划 |
+| 19 | [软件工程图集](docs/19-软件工程图集.md) | Mermaid 软件工程图索引（22 幅图） |
 
 ## 快速开始
 
@@ -145,6 +195,27 @@ gcc tests/test_circular_queue.c src/queue/circular_queue/circular_queue.c -I tes
 | 贪心 | `src/advanced_algorithm/greedy/` | 活动选择/分数背包/区间调度 |
 | 回溯 | `src/advanced_algorithm/backtracking/` | N 皇后/全排列/组合 |
 | 分治 | `src/advanced_algorithm/divide_and_conquer/` | 最大子数组/最近点对 |
+
+### Python 实现
+
+| 模块 | 路径 | 说明 |
+|------|------|------|
+| 排序 | `python/algorithms/sorting/` | 10 种排序算法（冒泡/选择/插入/希尔/快排/归并/堆排/计数/基数/桶排序） |
+| 搜索 | `python/algorithms/searching/` | 4 种搜索算法（线性/二分/插值/斐波那契） |
+| 字符串 | `python/algorithms/string_algorithm/` | 6 种字符串算法（暴力/KMP/RK/BM/Manacher/LCS） |
+| 动态规划 | `python/algorithms/dynamic_programming/` | 9 个经典 DP 问题 |
+| 贪心 | `python/algorithms/greedy/` | 活动选择/分数背包/区间调度 |
+| 回溯 | `python/algorithms/backtracking/` | N 皇后/全排列/组合/子集和 |
+| 分治 | `python/algorithms/divide_and_conquer/` | 最大子数组/最近点对 |
+| 数据结构 | `python/algorithms/data_structures/` | 18 种数据结构 Python 实现 |
+| 位运算 | `python/algorithms/bit_manipulation/` | 位操作技巧 |
+
+运行 Python 算法测试：
+
+```bash
+cd python
+python -m algorithms.run_all
+```
 
 ## 代码规范
 

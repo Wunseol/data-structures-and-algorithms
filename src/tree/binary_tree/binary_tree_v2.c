@@ -1,53 +1,53 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h> 
  
-typedef struct node{ //Ê÷µÄ½áµã
+typedef struct node{ //æ ‘çš„ç»“ç‚¹
     int data;
     struct node* left;
     struct node* right;
 } Node;
  
-typedef struct { //Ê÷¸ù
+typedef struct { //æ ‘æ ¹
     Node* root;
 } Tree;
 
 
 
-void insert(Tree* tree, int value)//´´½¨Ê÷
+void insert(Tree* tree, int value)//åˆ›å»ºæ ‘
 {
-    Node* node=(Node*)malloc(sizeof(Node));//´´½¨Ò»¸ö½Úµã
+    Node* node=(Node*)malloc(sizeof(Node));//åˆ›å»ºä¸€ä¸ªèŠ‚ç‚¹
     node->data = value;
     node->left = NULL;
     node->right = NULL;
-    if (tree->root == NULL)//ÅĞ¶ÏÊ÷ÊÇ²»ÊÇ¿ÕÊ÷
+    if (tree->root == NULL)//åˆ¤æ–­æ ‘æ˜¯ä¸æ˜¯ç©ºæ ‘
     {
         tree->root = node;
     }
-    else {//²»ÊÇ¿ÕÊ÷
-        Node* temp = tree->root;//´ÓÊ÷¸ù¿ªÊ¼
+    else {//ä¸æ˜¯ç©ºæ ‘
+        Node* temp = tree->root;//ä»æ ‘æ ¹å¼€å§‹
         while (temp != NULL)
         {
  
  
-            if (value < temp->data)//Ğ¡ÓÚ¾Í½ø×ó¶ù×Ó
+            if (value < temp->data)//å°äºå°±è¿›å·¦å„¿å­
             {
                 if (temp->left == NULL)
                 {
                     temp->left = node;
                     return;
                 }
-                else {//¼ÌĞøÅĞ¶Ï
+                else {//ç»§ç»­åˆ¤æ–­
                     temp = temp->left;
                 }
             }
-            else {//·ñÔò½øÓÒ¶ù×Ó
+            else {//å¦åˆ™è¿›å³å„¿å­
  
                 if (temp->right == NULL)
                 {
                     temp->right = node;
                     return;
                 }
-                else {//¼ÌĞøÅĞ¶Ï
+                else {//ç»§ç»­åˆ¤æ–­
                     temp = temp->right;
                 }
             }
@@ -56,7 +56,7 @@ void insert(Tree* tree, int value)//´´½¨Ê÷
     return;
 }
  
-void midorder(Node* node)//Ê÷µÄÖĞĞò±éÀú
+void midorder(Node* node)//æ ‘çš„ä¸­åºéå†
 {
     if (node != NULL)
     {
@@ -69,10 +69,10 @@ void midorder(Node* node)//Ê÷µÄÖĞĞò±éÀú
 int main()
 {
     Tree tree;
-    tree.root = NULL;//´´½¨Ò»¸ö¿ÕÊ÷
+    tree.root = NULL;//åˆ›å»ºä¸€ä¸ªç©ºæ ‘
     int n;
     scanf("%d",&n);
-    for (int i = 0; i < n; i++)//ÊäÈën¸öÊı²¢´´½¨Õâ¸öÊ÷
+    for (int i = 0; i < n; i++)//è¾“å…¥nä¸ªæ•°å¹¶åˆ›å»ºè¿™ä¸ªæ ‘
     {
         int temp;
         scanf("%d",&temp);

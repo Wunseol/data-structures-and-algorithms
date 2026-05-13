@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -91,17 +91,17 @@ void print_subsets(const vector<vector<int>>& subsets, int max_show = 30) {
         cout << "}" << endl;
     }
     if ((int)subsets.size() > max_show)
-        cout << "... »¹ÓÐ " << subsets.size() - max_show << " ¸ö×Ó¼¯Î´ÏÔÊ¾" << endl;
+        cout << "... è¿˜æœ‰ " << subsets.size() - max_show << " ä¸ªå­é›†æœªæ˜¾ç¤º" << endl;
 }
 
 void menu() {
-    cout << "\n========== ×Ó¼¯ºÍ ==========" << endl;
-    cout << "1. ÕÒËùÓÐ×Ó¼¯ (ÅÅÐò+¼ôÖ¦+È¥ÖØ)" << endl;
-    cout << "2. ÕÒËùÓÐ×Ó¼¯ (ÎÞ¼ôÖ¦, º¬ÖØ¸´)" << endl;
-    cout << "3. ½ö¼ÆÊý" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== å­é›†å’Œ ==========" << endl;
+    cout << "1. æ‰¾æ‰€æœ‰å­é›† (æŽ’åº+å‰ªæž+åŽ»é‡)" << endl;
+    cout << "2. æ‰¾æ‰€æœ‰å­é›† (æ— å‰ªæž, å«é‡å¤)" << endl;
+    cout << "3. ä»…è®¡æ•°" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "============================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -112,52 +112,52 @@ int main() {
         switch (choice) {
             case 1: {
                 int n, target;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ: ";
+                cout << "è¾“å…¥å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "ÊäÈëÄ¿±êºÍ: ";
+                cout << "è¾“å…¥ç›®æ ‡å’Œ: ";
                 cin >> target;
                 SubsetSum solver;
                 auto subsets = solver.solve(nums, target);
-                cout << "×Ó¼¯Êý: " << subsets.size() << endl;
+                cout << "å­é›†æ•°: " << subsets.size() << endl;
                 print_subsets(subsets);
                 break;
             }
             case 2: {
                 int n, target;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ: ";
+                cout << "è¾“å…¥å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "ÊäÈëÄ¿±êºÍ: ";
+                cout << "è¾“å…¥ç›®æ ‡å’Œ: ";
                 cin >> target;
                 SubsetSumAll solver;
                 auto subsets = solver.solve(nums, target);
-                cout << "×Ó¼¯Êý: " << subsets.size() << endl;
+                cout << "å­é›†æ•°: " << subsets.size() << endl;
                 print_subsets(subsets);
                 break;
             }
             case 3: {
                 int n, target;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ: ";
+                cout << "è¾“å…¥å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
-                cout << "ÊäÈëÄ¿±êºÍ: ";
+                cout << "è¾“å…¥ç›®æ ‡å’Œ: ";
                 cin >> target;
                 SubsetSumCount solver;
-                cout << "×Ó¼¯Êý: " << solver.solve(nums, target) << endl;
+                cout << "å­é›†æ•°: " << solver.solve(nums, target) << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

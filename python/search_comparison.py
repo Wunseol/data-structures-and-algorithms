@@ -4,73 +4,16 @@
 """
 
 import random
+import sys
 import time
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-def linear_search(arr: list[int], target: int) -> int:
-    for i, x in enumerate(arr):
-        if x == target:
-            return i
-    return -1
-
-
-def binary_search(arr: list[int], target: int) -> int:
-    lo, hi = 0, len(arr) - 1
-    while lo <= hi:
-        mid = (lo + hi) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            lo = mid + 1
-        else:
-            hi = mid - 1
-    return -1
-
-
-def interpolation_search(arr: list[int], target: int) -> int:
-    lo, hi = 0, len(arr) - 1
-    while lo <= hi and arr[lo] <= target <= arr[hi]:
-        if arr[lo] == arr[hi]:
-            if arr[lo] == target:
-                return lo
-            return -1
-        pos = lo + int((target - arr[lo]) / (arr[hi] - arr[lo]) * (hi - lo))
-        pos = max(lo, min(hi, pos))
-        if arr[pos] == target:
-            return pos
-        elif arr[pos] < target:
-            lo = pos + 1
-        else:
-            hi = pos - 1
-    return -1
-
-
-def fibonacci_search(arr: list[int], target: int) -> int:
-    n = len(arr)
-    fib2 = 0
-    fib1 = 1
-    fib = fib2 + fib1
-    while fib < n:
-        fib2 = fib1
-        fib1 = fib
-        fib = fib2 + fib1
-    offset = -1
-    while fib > 1:
-        i = min(offset + fib2, n - 1)
-        if arr[i] < target:
-            fib = fib1
-            fib1 = fib2
-            fib2 = fib - fib1
-            offset = i
-        elif arr[i] > target:
-            fib = fib2
-            fib1 = fib1 - fib2
-            fib2 = fib - fib1
-        else:
-            return i
-    if fib1 and offset + 1 < n and arr[offset + 1] == target:
-        return offset + 1
-    return -1
+from algorithms.searching.binary_search import binary_search
+from algorithms.searching.fibonacci_search import fibonacci_search
+from algorithms.searching.interpolation_search import interpolation_search
+from algorithms.searching.linear_search import linear_search
 
 
 SEARCH_ALGORITHMS: list[tuple[str, object]] = [

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -48,10 +48,10 @@ void printArray(const vector<double>& arr) {
 
 void showMenu() {
     cout << endl;
-    cout << "*************Í°ÅÅÐò**************************" << endl;
-    cout << "1. Ö´ÐÐÍ°ÅÅÐò" << endl;
-    cout << "0. ÍË³ö" << endl;
-    cout << "ÇëÑ¡Ôñ²Ù×÷: ";
+    cout << "*************æ¡¶æŽ’åº**************************" << endl;
+    cout << "1. æ‰§è¡Œæ¡¶æŽ’åº" << endl;
+    cout << "0. é€€å‡º" << endl;
+    cout << "è¯·é€‰æ‹©æ“ä½œ: ";
 }
 
 int main() {
@@ -62,31 +62,31 @@ int main() {
 
         if (choice == 1) {
             int n;
-            cout << "ÇëÊäÈëÔªËØ¸öÊý: ";
+            cout << "è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
             cin >> n;
 
             vector<double> arr(n);
-            cout << "ÇëÊäÈë" << n << "¸ö[0,1)·¶Î§ÄÚµÄ¸¡µãÊý: ";
+            cout << "è¯·è¾“å…¥" << n << "ä¸ª[0,1)èŒƒå›´å†…çš„æµ®ç‚¹æ•°: ";
             for (int i = 0; i < n; i++) {
                 cin >> arr[i];
                 if (arr[i] < 0.0 || arr[i] >= 1.0) {
-                    cout << "ÇëÊäÈë[0,1)·¶Î§ÄÚµÄ¸¡µãÊý: ";
+                    cout << "è¯·è¾“å…¥[0,1)èŒƒå›´å†…çš„æµ®ç‚¹æ•°: ";
                     cin >> arr[i];
                 }
             }
 
-            cout << "ÅÅÐòÇ°: ";
+            cout << "æŽ’åºå‰: ";
             printArray(arr);
 
             bucketSort(arr);
 
-            cout << "Í°ÅÅÐò½á¹û: ";
+            cout << "æ¡¶æŽ’åºç»“æžœ: ";
             printArray(arr);
 
-            cout << "Ê±¼ä¸´ÔÓ¶È: Æ½¾ùO(n), ×î»µO(n^2), ¿Õ¼ä¸´ÔÓ¶È: O(n+k)" << endl;
+            cout << "æ—¶é—´å¤æ‚åº¦: å¹³å‡O(n), æœ€åO(n^2), ç©ºé—´å¤æ‚åº¦: O(n+k)" << endl;
         }
     } while (choice != 0);
 
-    cout << "³ÌÐò½áÊø" << endl;
+    cout << "ç¨‹åºç»“æŸ" << endl;
     return 0;
 }

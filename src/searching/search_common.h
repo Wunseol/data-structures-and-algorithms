@@ -1,4 +1,4 @@
-#ifndef SEARCH_COMMON_H
+﻿#ifndef SEARCH_COMMON_H
 #define SEARCH_COMMON_H
 
 #include <iostream>

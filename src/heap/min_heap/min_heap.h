@@ -1,4 +1,4 @@
-#ifndef MIN_HEAP_H
+﻿#ifndef MIN_HEAP_H
 #define MIN_HEAP_H
 
 #include <stdbool.h>

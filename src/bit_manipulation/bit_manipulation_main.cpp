@@ -1,34 +1,34 @@
-#include "bit_manipulation.h"
+ï»¿#include "bit_manipulation.h"
 #include <cstdio>
 
 static void print_menu(void)
 {
-    printf("\n========== Î»ÔËËã²Ù×÷²Ëµ¥ ==========\n");
-    printf("  1. ÅĞ¶ÏÆæÅ¼ (isOdd)\n");
-    printf("  2. ÅĞ¶Ï2µÄÃİ (isPowerOfTwo)\n");
-    printf("  3. Í³¼Æ1µÄ¸öÊı (countBits)\n");
-    printf("  4. »ñÈ¡Ä³Ò»Î» (getBit)\n");
-    printf("  5. ÉèÖÃÄ³Ò»Î» (setBit)\n");
-    printf("  6. Çå³ıÄ³Ò»Î» (clearBit)\n");
-    printf("  7. ·­×ªÄ³Ò»Î» (toggleBit)\n");
-    printf("  8. XOR½»»» (swapXor)\n");
-    printf("  9. ººÃ÷¾àÀë (hammingDistance)\n");
-    printf("  10. ·´×ªÎ» (reverseBits)\n");
-    printf("  11. ×Ô²â\n");
-    printf("  0. ÍË³ö\n");
+    printf("\n========== ä½è¿ç®—æ“ä½œèœå• ==========\n");
+    printf("  1. åˆ¤æ–­å¥‡å¶ (isOdd)\n");
+    printf("  2. åˆ¤æ–­2çš„å¹‚ (isPowerOfTwo)\n");
+    printf("  3. ç»Ÿè®¡1çš„ä¸ªæ•° (countBits)\n");
+    printf("  4. è·å–æŸä¸€ä½ (getBit)\n");
+    printf("  5. è®¾ç½®æŸä¸€ä½ (setBit)\n");
+    printf("  6. æ¸…é™¤æŸä¸€ä½ (clearBit)\n");
+    printf("  7. ç¿»è½¬æŸä¸€ä½ (toggleBit)\n");
+    printf("  8. XORäº¤æ¢ (swapXor)\n");
+    printf("  9. æ±‰æ˜è·ç¦» (hammingDistance)\n");
+    printf("  10. åè½¬ä½ (reverseBits)\n");
+    printf("  11. è‡ªæµ‹\n");
+    printf("  0. é€€å‡º\n");
     printf("====================================\n");
-    printf("ÇëÑ¡Ôñ²Ù×÷: ");
+    printf("è¯·é€‰æ‹©æ“ä½œ: ");
 }
 
 static void self_test(void)
 {
-    printf("\n----- Î»ÔËËã×Ô²â -----\n");
+    printf("\n----- ä½è¿ç®—è‡ªæµ‹ -----\n");
 
-    printf("isOdd(7) = %s\n", isOdd(7) ? "ÆæÊı" : "Å¼Êı");
-    printf("isOdd(8) = %s\n", isOdd(8) ? "ÆæÊı" : "Å¼Êı");
+    printf("isOdd(7) = %s\n", isOdd(7) ? "å¥‡æ•°" : "å¶æ•°");
+    printf("isOdd(8) = %s\n", isOdd(8) ? "å¥‡æ•°" : "å¶æ•°");
 
-    printf("isPowerOfTwo(16) = %s\n", isPowerOfTwo(16) ? "ÊÇ" : "·ñ");
-    printf("isPowerOfTwo(15) = %s\n", isPowerOfTwo(15) ? "ÊÇ" : "·ñ");
+    printf("isPowerOfTwo(16) = %s\n", isPowerOfTwo(16) ? "æ˜¯" : "å¦");
+    printf("isPowerOfTwo(15) = %s\n", isPowerOfTwo(15) ? "æ˜¯" : "å¦");
 
     printf("countBits(13) = %d (13 = 1101b)\n", countBits(13));
     printf("countBits(255) = %d (255 = 11111111b)\n", countBits(255));
@@ -41,9 +41,9 @@ static void self_test(void)
     printf("toggleBit(13, 0) = %d (13->12, 1101->1100)\n", toggleBit(13, 0));
 
     int a = 10, b = 20;
-    printf("swapXorÇ°: a=%d, b=%d\n", a, b);
+    printf("swapXorå‰: a=%d, b=%d\n", a, b);
     swapXor(a, b);
-    printf("swapXorºó: a=%d, b=%d\n", a, b);
+    printf("swapXorå: a=%d, b=%d\n", a, b);
 
     printf("hammingDistance(1, 4) = %d (1=001, 4=100)\n", hammingDistance(1, 4));
     printf("hammingDistance(0, 0) = %d\n", hammingDistance(0, 0));
@@ -52,7 +52,7 @@ static void self_test(void)
     uint32_t rev = reverseBits(val);
     printf("reverseBits(0x%08X) = 0x%08X\n", val, rev);
 
-    printf("----- ×Ô²âÍê³É -----\n");
+    printf("----- è‡ªæµ‹å®Œæˆ -----\n");
 }
 
 int main(void)
@@ -64,66 +64,66 @@ int main(void)
         if (scanf("%d", &choice) != 1) {
             while (getchar() != '\n')
                 ;
-            printf("ÊäÈëÎŞĞ§£¬ÇëÖØĞÂÊäÈë\n");
+            printf("è¾“å…¥æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥\n");
             continue;
         }
 
         switch (choice) {
         case 1: {
             int n;
-            printf("ÇëÊäÈëÕûÊı: ");
+            printf("è¯·è¾“å…¥æ•´æ•°: ");
             if (scanf("%d", &n) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d ÊÇ%sÊı\n", n, isOdd(n) ? "Ææ" : "Å¼");
+            printf("%d æ˜¯%sæ•°\n", n, isOdd(n) ? "å¥‡" : "å¶");
             break;
         }
         case 2: {
             int n;
-            printf("ÇëÊäÈëÕûÊı: ");
+            printf("è¯·è¾“å…¥æ•´æ•°: ");
             if (scanf("%d", &n) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d %s2µÄÃİ\n", n, isPowerOfTwo(n) ? "ÊÇ" : "²»ÊÇ");
+            printf("%d %s2çš„å¹‚\n", n, isPowerOfTwo(n) ? "æ˜¯" : "ä¸æ˜¯");
             break;
         }
         case 3: {
             int n;
-            printf("ÇëÊäÈëÕûÊı: ");
+            printf("è¯·è¾“å…¥æ•´æ•°: ");
             if (scanf("%d", &n) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d µÄ¶ş½øÖÆÖĞ1µÄ¸öÊı: %d\n", n, countBits(n));
+            printf("%d çš„äºŒè¿›åˆ¶ä¸­1çš„ä¸ªæ•°: %d\n", n, countBits(n));
             break;
         }
         case 4: {
             int n, i;
-            printf("ÇëÊäÈëÕûÊıºÍÎ»Ë÷Òı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥æ•´æ•°å’Œä½ç´¢å¼•(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &n, &i) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d µÄµÚ%dÎ»: %d\n", n, i, getBit(n, i));
+            printf("%d çš„ç¬¬%dä½: %d\n", n, i, getBit(n, i));
             break;
         }
         case 5: {
             int n, i;
-            printf("ÇëÊäÈëÕûÊıºÍÎ»Ë÷Òı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥æ•´æ•°å’Œä½ç´¢å¼•(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &n, &i) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("setBit(%d, %d) = %d\n", n, i, setBit(n, i));
@@ -131,11 +131,11 @@ int main(void)
         }
         case 6: {
             int n, i;
-            printf("ÇëÊäÈëÕûÊıºÍÎ»Ë÷Òı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥æ•´æ•°å’Œä½ç´¢å¼•(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &n, &i) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("clearBit(%d, %d) = %d\n", n, i, clearBit(n, i));
@@ -143,11 +143,11 @@ int main(void)
         }
         case 7: {
             int n, i;
-            printf("ÇëÊäÈëÕûÊıºÍÎ»Ë÷Òı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥æ•´æ•°å’Œä½ç´¢å¼•(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &n, &i) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("toggleBit(%d, %d) = %d\n", n, i, toggleBit(n, i));
@@ -155,37 +155,37 @@ int main(void)
         }
         case 8: {
             int a, b;
-            printf("ÇëÊäÈëÁ½¸öÕûÊı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &a, &b) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("½»»»Ç°: a=%d, b=%d\n", a, b);
+            printf("äº¤æ¢å‰: a=%d, b=%d\n", a, b);
             swapXor(a, b);
-            printf("½»»»ºó: a=%d, b=%d\n", a, b);
+            printf("äº¤æ¢å: a=%d, b=%d\n", a, b);
             break;
         }
         case 9: {
             int a, b;
-            printf("ÇëÊäÈëÁ½¸öÕûÊı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &a, &b) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d ºÍ %d µÄººÃ÷¾àÀë: %d\n", a, b, hammingDistance(a, b));
+            printf("%d å’Œ %d çš„æ±‰æ˜è·ç¦»: %d\n", a, b, hammingDistance(a, b));
             break;
         }
         case 10: {
             uint32_t n;
-            printf("ÇëÊäÈëÎŞ·ûºÅÕûÊı: ");
+            printf("è¯·è¾“å…¥æ— ç¬¦å·æ•´æ•°: ");
             if (scanf("%u", &n) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("reverseBits(%u) = %u\n", n, reverseBits(n));
@@ -195,10 +195,10 @@ int main(void)
             self_test();
             break;
         case 0:
-            printf("³ÌĞòÍË³ö\n");
+            printf("ç¨‹åºé€€å‡º\n");
             return 0;
         default:
-            printf("ÎŞĞ§Ñ¡Ôñ£¬ÇëÖØĞÂÊäÈë\n");
+            printf("æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             break;
         }
     }

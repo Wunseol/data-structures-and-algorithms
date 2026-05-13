@@ -1,4 +1,4 @@
-#include "math_algorithms.h"
+﻿#include "math_algorithms.h"
 #include <cmath>
 #include <algorithm>
 #include <random>

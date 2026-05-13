@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -70,17 +70,17 @@ void print_permutations(const vector<vector<int>>& perms, int max_show = 20) {
         cout << endl;
     }
     if ((int)perms.size() > max_show)
-        cout << "... »¹ÓÐ " << perms.size() - max_show << " ¸öÅÅÁÐÎ´ÏÔÊ¾" << endl;
+        cout << "... è¿˜æœ‰ " << perms.size() - max_show << " ä¸ªæŽ’åˆ—æœªæ˜¾ç¤º" << endl;
 }
 
 void menu() {
-    cout << "\n========== È«ÅÅÁÐ ==========" << endl;
-    cout << "1. ½»»»·¨ (swap method)" << endl;
-    cout << "2. usedÊý×é·¨ (º¬È¥ÖØ)" << endl;
-    cout << "3. ÐÔÄÜ¶Ô±È" << endl;
-    cout << "0. ÍË³ö" << endl;
+    cout << "\n========== å…¨æŽ’åˆ— ==========" << endl;
+    cout << "1. äº¤æ¢æ³• (swap method)" << endl;
+    cout << "2. usedæ•°ç»„æ³• (å«åŽ»é‡)" << endl;
+    cout << "3. æ€§èƒ½å¯¹æ¯”" << endl;
+    cout << "0. é€€å‡º" << endl;
     cout << "============================" << endl;
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "è¯·é€‰æ‹©: ";
 }
 
 int main() {
@@ -91,58 +91,58 @@ int main() {
         switch (choice) {
             case 1: {
                 int n;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ: ";
+                cout << "è¾“å…¥å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
                 PermutationsSwap solver;
                 auto perms = solver.solve(nums);
-                cout << "ÅÅÁÐÊý: " << perms.size() << endl;
+                cout << "æŽ’åˆ—æ•°: " << perms.size() << endl;
                 print_permutations(perms);
                 break;
             }
             case 2: {
                 int n;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ (¿Éº¬ÖØ¸´): ";
+                cout << "è¾“å…¥å…ƒç´  (å¯å«é‡å¤): ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
                 PermutationsUsed solver;
                 auto perms = solver.solve(nums);
-                cout << "ÅÅÁÐÊý: " << perms.size() << endl;
+                cout << "æŽ’åˆ—æ•°: " << perms.size() << endl;
                 print_permutations(perms);
                 break;
             }
             case 3: {
                 int n;
-                cout << "ÊäÈëÔªËØ¸öÊý: ";
+                cout << "è¾“å…¥å…ƒç´ ä¸ªæ•°: ";
                 cin >> n;
                 vector<int> nums(n);
-                cout << "ÊäÈëÔªËØ: ";
+                cout << "è¾“å…¥å…ƒç´ : ";
                 for (int i = 0; i < n; i++) cin >> nums[i];
 
                 auto t1 = clock();
                 PermutationsSwap s1;
                 auto r1 = s1.solve(nums);
                 auto t2 = clock();
-                cout << "½»»»·¨: " << r1.size() << " ¸öÅÅÁÐ, ºÄÊ±: "
+                cout << "äº¤æ¢æ³•: " << r1.size() << " ä¸ªæŽ’åˆ—, è€—æ—¶: "
                      << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 
                 t1 = clock();
                 PermutationsUsed s2;
                 auto r2 = s2.solve(nums);
                 t2 = clock();
-                cout << "usedÊý×é·¨: " << r2.size() << " ¸öÅÅÁÐ, ºÄÊ±: "
+                cout << "usedæ•°ç»„æ³•: " << r2.size() << " ä¸ªæŽ’åˆ—, è€—æ—¶: "
                      << double(t2 - t1) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
                 break;
             }
             case 0:
-                cout << "ÔÙ¼û!" << endl;
+                cout << "å†è§!" << endl;
                 break;
             default:
-                cout << "ÎÞÐ§Ñ¡Ôñ!" << endl;
+                cout << "æ— æ•ˆé€‰æ‹©!" << endl;
         }
     } while (choice != 0);
     return 0;

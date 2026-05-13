@@ -1,4 +1,4 @@
-#ifndef AVL_TREE_H
+﻿#ifndef AVL_TREE_H
 #define AVL_TREE_H
 
 struct AVLNode {

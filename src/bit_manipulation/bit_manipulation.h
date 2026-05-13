@@ -1,4 +1,4 @@
-#ifndef BIT_MANIPULATION_H
+﻿#ifndef BIT_MANIPULATION_H
 #define BIT_MANIPULATION_H
 
 #include <cstdint>

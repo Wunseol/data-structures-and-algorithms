@@ -34,6 +34,16 @@ jobs:
       - name: Run self-tests
         run: cmake --build build --target test || true
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python algorithm tests
+        run: |
+          cd python
+          python -m algorithms.run_all
+
   macos-clang:
     runs-on: macos-latest
     steps:
@@ -59,6 +69,16 @@ jobs:
       - name: Run self-tests
         run: cmake --build build --target test || true
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python algorithm tests
+        run: |
+          cd python
+          python -m algorithms.run_all
+
   windows-msvc:
     runs-on: windows-latest
     steps:
@@ -83,3 +103,13 @@ jobs:
 
       - name: Run self-tests
         run: cmake --build build --config Release --target test || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python algorithm tests
+        run: |
+          cd python
+          python -m algorithms.run_all

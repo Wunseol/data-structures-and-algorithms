@@ -1,35 +1,35 @@
-#include "math_algorithms.h"
+ï»¿#include "math_algorithms.h"
 #include <cstdio>
 
 static void print_menu(void)
 {
-    printf("\n========== ÊıÑ§Ëã·¨²Ù×÷²Ëµ¥ ==========\n");
-    printf("  1.  ÅĞ¶ÏËØÊı (isPrime)\n");
-    printf("  2.  Miller-RabinËØĞÔ²âÊÔ\n");
-    printf("  3.  ×î´ó¹«Ô¼Êı (gcd)\n");
-    printf("  4.  ×îĞ¡¹«±¶Êı (lcm)\n");
-    printf("  5.  °£À­ÍĞË¹ÌØÄáÉ¸·¨\n");
-    printf("  6.  ¿ìËÙÃİ (fastPow)\n");
-    printf("  7.  ì³²¨ÄÇÆõ¾ØÕó¿ìËÙÃİ\n");
-    printf("  8.  Ä£ÄæÔª (modInverse)\n");
-    printf("  9.  ¿¨ÌØÀ¼Êı (catalan)\n");
-    printf("  10. ×éºÏÊı (binomial)\n");
-    printf("  11. ×Ô²â\n");
-    printf("  0.  ÍË³ö\n");
+    printf("\n========== æ•°å­¦ç®—æ³•æ“ä½œèœå• ==========\n");
+    printf("  1.  åˆ¤æ–­ç´ æ•° (isPrime)\n");
+    printf("  2.  Miller-Rabinç´ æ€§æµ‹è¯•\n");
+    printf("  3.  æœ€å¤§å…¬çº¦æ•° (gcd)\n");
+    printf("  4.  æœ€å°å…¬å€æ•° (lcm)\n");
+    printf("  5.  åŸƒæ‹‰æ‰˜æ–¯ç‰¹å°¼ç­›æ³•\n");
+    printf("  6.  å¿«é€Ÿå¹‚ (fastPow)\n");
+    printf("  7.  æ–æ³¢é‚£å¥‘çŸ©é˜µå¿«é€Ÿå¹‚\n");
+    printf("  8.  æ¨¡é€†å…ƒ (modInverse)\n");
+    printf("  9.  å¡ç‰¹å…°æ•° (catalan)\n");
+    printf("  10. ç»„åˆæ•° (binomial)\n");
+    printf("  11. è‡ªæµ‹\n");
+    printf("  0.  é€€å‡º\n");
     printf("======================================\n");
-    printf("ÇëÑ¡Ôñ²Ù×÷: ");
+    printf("è¯·é€‰æ‹©æ“ä½œ: ");
 }
 
 static void self_test(void)
 {
-    printf("\n----- ÊıÑ§Ëã·¨×Ô²â -----\n");
+    printf("\n----- æ•°å­¦ç®—æ³•è‡ªæµ‹ -----\n");
 
-    printf("isPrime(7) = %s\n", isPrime(7) ? "ËØÊı" : "ºÏÊı");
-    printf("isPrime(12) = %s\n", isPrime(12) ? "ËØÊı" : "ºÏÊı");
-    printf("isPrime(97) = %s\n", isPrime(97) ? "ËØÊı" : "ºÏÊı");
+    printf("isPrime(7) = %s\n", isPrime(7) ? "ç´ æ•°" : "åˆæ•°");
+    printf("isPrime(12) = %s\n", isPrime(12) ? "ç´ æ•°" : "åˆæ•°");
+    printf("isPrime(97) = %s\n", isPrime(97) ? "ç´ æ•°" : "åˆæ•°");
 
-    printf("millerRabin(97, 5) = %s\n", millerRabin(97, 5) ? "ËØÊı" : "ºÏÊı");
-    printf("millerRabin(561, 5) = %s (561ÊÇCarmichaelÊı)\n", millerRabin(561, 5) ? "ËØÊı" : "ºÏÊı");
+    printf("millerRabin(97, 5) = %s\n", millerRabin(97, 5) ? "ç´ æ•°" : "åˆæ•°");
+    printf("millerRabin(561, 5) = %s (561æ˜¯Carmichaelæ•°)\n", millerRabin(561, 5) ? "ç´ æ•°" : "åˆæ•°");
 
     printf("gcd(12, 18) = %d\n", gcd(12, 18));
     printf("gcd(35, 14) = %d\n", gcd(35, 14));
@@ -61,7 +61,7 @@ static void self_test(void)
     printf("binomial(10, 3) = %lld\n", (long long)binomial(10, 3));
     printf("binomial(20, 10) = %lld\n", (long long)binomial(20, 10));
 
-    printf("----- ×Ô²âÍê³É -----\n");
+    printf("----- è‡ªæµ‹å®Œæˆ -----\n");
 }
 
 int main(void)
@@ -73,44 +73,44 @@ int main(void)
         if (scanf("%d", &choice) != 1) {
             while (getchar() != '\n')
                 ;
-            printf("ÊäÈëÎŞĞ§£¬ÇëÖØĞÂÊäÈë\n");
+            printf("è¾“å…¥æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥\n");
             continue;
         }
 
         switch (choice) {
         case 1: {
             int n;
-            printf("ÇëÊäÈëÕûÊı: ");
+            printf("è¯·è¾“å…¥æ•´æ•°: ");
             if (scanf("%d", &n) != 1) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%d %sËØÊı\n", n, isPrime(n) ? "ÊÇ" : "²»ÊÇ");
+            printf("%d %sç´ æ•°\n", n, isPrime(n) ? "æ˜¯" : "ä¸æ˜¯");
             break;
         }
         case 2: {
             int64_t n;
             int k;
-            printf("ÇëÊäÈëÕûÊıºÍ²âÊÔÂÖÊı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥æ•´æ•°å’Œæµ‹è¯•è½®æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%lld %d", &n, &k) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
-            printf("%lld %sËØÊı(¸ÅÂÊĞÔ²âÊÔ, ÂÖÊı=%d)\n",
-                   (long long)n, millerRabin(n, k) ? "¿ÉÄÜÊÇ" : "²»ÊÇ", k);
+            printf("%lld %sç´ æ•°(æ¦‚ç‡æ€§æµ‹è¯•, è½®æ•°=%d)\n",
+                   (long long)n, millerRabin(n, k) ? "å¯èƒ½æ˜¯" : "ä¸æ˜¯", k);
             break;
         }
         case 3: {
             int a, b;
-            printf("ÇëÊäÈëÁ½¸öÕûÊı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &a, &b) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("gcd(%d, %d) = %d\n", a, b, gcd(a, b));
@@ -118,11 +118,11 @@ int main(void)
         }
         case 4: {
             int a, b;
-            printf("ÇëÊäÈëÁ½¸öÕûÊı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &a, &b) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("lcm(%d, %d) = %d\n", a, b, lcm(a, b));
@@ -130,26 +130,26 @@ int main(void)
         }
         case 5: {
             int n;
-            printf("ÇëÊäÈëÉÏÏŞn: ");
+            printf("è¯·è¾“å…¥ä¸Šé™n: ");
             if (scanf("%d", &n) != 1 || n < 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             auto primes = sieveOfEratosthenes(n);
-            printf("2µ½%dµÄËØÊı¹²%lld¸ö: ", n, (long long)primes.size());
+            printf("2åˆ°%dçš„ç´ æ•°å…±%lldä¸ª: ", n, (long long)primes.size());
             for (int p : primes) printf("%d ", p);
             printf("\n");
             break;
         }
         case 6: {
             int64_t base, exp, mod;
-            printf("ÇëÊäÈëµ×Êı¡¢Ö¸Êı¡¢Ä£Êı(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥åº•æ•°ã€æŒ‡æ•°ã€æ¨¡æ•°(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%lld %lld %lld", &base, &exp, &mod) != 3) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("(%lld ^ %lld) mod %lld = %lld\n",
@@ -159,11 +159,11 @@ int main(void)
         }
         case 7: {
             int n;
-            printf("ÇëÊäÈën: ");
+            printf("è¯·è¾“å…¥n: ");
             if (scanf("%d", &n) != 1 || n < 0) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("fib(%d) = %lld (mod 1000000007)\n", n, (long long)fibonacciMatrix(n));
@@ -171,27 +171,27 @@ int main(void)
         }
         case 8: {
             int a, m;
-            printf("ÇëÊäÈëaºÍm(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥aå’Œm(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &a, &m) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             int inv = modInverse(a, m);
             if (inv == -1)
-                printf("%dÔÚÄ£%dÏÂÃ»ÓĞÄæÔª(gcd!=1)\n", a, m);
+                printf("%dåœ¨æ¨¡%dä¸‹æ²¡æœ‰é€†å…ƒ(gcd!=1)\n", a, m);
             else
-                printf("%dÔÚÄ£%dÏÂµÄÄæÔª: %d\n", a, m, inv);
+                printf("%dåœ¨æ¨¡%dä¸‹çš„é€†å…ƒ: %d\n", a, m, inv);
             break;
         }
         case 9: {
             int n;
-            printf("ÇëÊäÈën: ");
+            printf("è¯·è¾“å…¥n: ");
             if (scanf("%d", &n) != 1 || n < 0) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("catalan(%d) = %lld\n", n, (long long)catalan(n));
@@ -199,11 +199,11 @@ int main(void)
         }
         case 10: {
             int n, k;
-            printf("ÇëÊäÈënºÍk(ÓÃ¿Õ¸ñ·Ö¸ô): ");
+            printf("è¯·è¾“å…¥nå’Œk(ç”¨ç©ºæ ¼åˆ†éš”): ");
             if (scanf("%d %d", &n, &k) != 2) {
                 while (getchar() != '\n')
                     ;
-                printf("ÊäÈëÎŞĞ§\n");
+                printf("è¾“å…¥æ— æ•ˆ\n");
                 break;
             }
             printf("C(%d, %d) = %lld\n", n, k, (long long)binomial(n, k));
@@ -213,10 +213,10 @@ int main(void)
             self_test();
             break;
         case 0:
-            printf("³ÌĞòÍË³ö\n");
+            printf("ç¨‹åºé€€å‡º\n");
             return 0;
         default:
-            printf("ÎŞĞ§Ñ¡Ôñ£¬ÇëÖØĞÂÊäÈë\n");
+            printf("æ— æ•ˆé€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥\n");
             break;
         }
     }

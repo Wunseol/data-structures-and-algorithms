@@ -1,14 +1,14 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #define maxsize 20
-int newer (struct list *sqlist);//³õÊ¼»¯
-int insert (struct list *sqlist);//²åÈë
-int dele (struct list *sqlist);//É¾³ý
-int LocateElem (struct list *sqlist);//²éÕÒ
-int  MergeList (struct list *sqlist);//ºÏ²¢
-int u (struct list *sqlist);//²¢¼¯
-int n (struct list *sqlist);//½»¼¯
-void clear(struct list *sqlist);//Çå¿Õ
+int newer (struct list *sqlist);//åˆå§‹åŒ–
+int insert (struct list *sqlist);//æ’å…¥
+int dele (struct list *sqlist);//åˆ é™¤
+int LocateElem (struct list *sqlist);//æŸ¥æ‰¾
+int  MergeList (struct list *sqlist);//åˆå¹¶
+int u (struct list *sqlist);//å¹¶é›†
+int n (struct list *sqlist);//äº¤é›†
+void clear(struct list *sqlist);//æ¸…ç©º
 struct list{
 	int a[maxsize];
 	int length;
@@ -31,7 +31,7 @@ void clear(struct list *sqlist)
 {
 	int i,n;
 	sqlist->length=0;
-	printf("ÏßÐÔ±íÒÑ±»Çå¿Õ!\n");
+	printf("çº¿æ€§è¡¨å·²è¢«æ¸…ç©º!\n");
 }
 int newer(struct list *sqlist)
 {
@@ -47,7 +47,7 @@ int newer(struct list *sqlist)
 int dele(struct list *sqlist)
 {
 	int i,x,n;
-	printf("ÄãÒªÉ¾³ý¼¸ºÅÔªËØ?\n");
+	printf("ä½ è¦åˆ é™¤å‡ å·å…ƒç´ ?\n");
 	scanf("%d",&x);
 	if(x>sqlist->length||x<1)
 		return printf("error!\n");
@@ -70,7 +70,7 @@ int LocateElem (struct list *sqlist)
 int insert(struct list *sqlist)
 { 
 	int i,elem,loc;
-	printf("ÇëÊäÈëÄãÒª²åÈëµÄÔªËØºÍÎ»ÖÃ\n");
+	printf("è¯·è¾“å…¥ä½ è¦æ’å…¥çš„å…ƒç´ å’Œä½ç½®\n");
 	scanf("%d %d",&elem,&loc);
 	if(loc<1||loc>sqlist->length+1)
 		return printf("error!\n");

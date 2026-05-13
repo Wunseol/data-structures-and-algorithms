@@ -1,10 +1,10 @@
-#include "circular_linked_list.h"
+ï»¿#include "circular_linked_list.h"
 
 CiLinkList InitCiList(void)
 {
     CiLinkList L = (CiLinkList)malloc(sizeof(CiLNode));
     if (L == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         exit(1);
     }
     L->next = L;
@@ -18,10 +18,10 @@ void CreateCiListTail(CiLinkList L, int n)
     for (i = 0; i < n; i++) {
         CiLNode *s = (CiLNode *)malloc(sizeof(CiLNode));
         if (s == NULL) {
-            printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+            printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
             exit(1);
         }
-        printf("ÇëÊäÈëµÚ%d¸öÔªËØ: ", i + 1);
+        printf("è¯·è¾“å…¥ç¬¬%dä¸ªå…ƒç´ : ", i + 1);
         scanf("%d", &s->data);
         s->next = L;
         tail->next = s;
@@ -32,7 +32,7 @@ void CreateCiListTail(CiLinkList L, int n)
 int ListInsert(CiLinkList L, int i, ElemType e)
 {
     if (i < 1) {
-        printf("²åÈëÎ»ÖÃ²»ºÏ·¨!\n");
+        printf("æ’å…¥ä½ç½®ä¸åˆæ³•!\n");
         return 0;
     }
     CiLNode *p = L;
@@ -42,12 +42,12 @@ int ListInsert(CiLinkList L, int i, ElemType e)
         j++;
     }
     if (j < i - 1) {
-        printf("²åÈëÎ»ÖÃ³¬³öÁ´±í³¤¶È!\n");
+        printf("æ’å…¥ä½ç½®è¶…å‡ºé“¾è¡¨é•¿åº¦!\n");
         return 0;
     }
     CiLNode *s = (CiLNode *)malloc(sizeof(CiLNode));
     if (s == NULL) {
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
+        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
         return 0;
     }
     s->data = e;
@@ -59,7 +59,7 @@ int ListInsert(CiLinkList L, int i, ElemType e)
 int ListDelete(CiLinkList L, int i, ElemType *e)
 {
     if (i < 1 || L->next == L) {
-        printf("É¾³ýÎ»ÖÃ²»ºÏ·¨»òÁ´±íÎª¿Õ!\n");
+        printf("åˆ é™¤ä½ç½®ä¸åˆæ³•æˆ–é“¾è¡¨ä¸ºç©º!\n");
         return 0;
     }
     CiLNode *p = L;
@@ -69,7 +69,7 @@ int ListDelete(CiLinkList L, int i, ElemType *e)
         j++;
     }
     if (p->next == L) {
-        printf("É¾³ýÎ»ÖÃ³¬³öÁ´±í³¤¶È!\n");
+        printf("åˆ é™¤ä½ç½®è¶…å‡ºé“¾è¡¨é•¿åº¦!\n");
         return 0;
     }
     CiLNode *q = p->next;
@@ -98,7 +98,7 @@ int ListLength(CiLinkList L)
 void ListTraverse(CiLinkList L)
 {
     if (L->next == L) {
-        printf("Á´±íÎª¿Õ!\n");
+        printf("é“¾è¡¨ä¸ºç©º!\n");
         return;
     }
     CiLNode *p = L->next;

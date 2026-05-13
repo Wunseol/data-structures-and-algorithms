@@ -1,4 +1,4 @@
-#ifndef SELF_TEST_H
+﻿#ifndef SELF_TEST_H
 #define SELF_TEST_H
 
 #include <stdio.h>
