@@ -1,4 +1,4 @@
-﻿# Data Structures and Algorithms
+# Data Structures and Algorithms
 
 [![CI](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -54,12 +54,23 @@ data-structures-and-algorithms/
 │   │   ├── binary_search_tree/        #   二叉排序树
 │   │   ├── avl_tree/                  #   AVL 树
 │   │   ├── huffman_tree/              #   哈夫曼树
-│   │   └── trie/                      #   字典树
+│   │   ├── trie/                      #   字典树
+│   │   ├── segment_tree/              #   线段树
+│   │   └── fenwick_tree/              #   树状数组
 │   ├── graph/                         # 图
 │   │   ├── adjacency_matrix/          #   邻接矩阵
 │   │   ├── adjacency_list/            #   邻接表
-│   │   └── union_find/                #   并查集
+│   │   ├── union_find/                #   并查集
+│   │   ├── topological_sort/          #   拓扑排序
+│   │   ├── dijkstra/                  #   Dijkstra
+│   │   ├── bellman_ford/              #   Bellman-Ford
+│   │   ├── floyd_warshall/            #   Floyd-Warshall
+│   │   ├── kruskal/                   #   Kruskal
+│   │   └── prim/                      #   Prim
 │   ├── hash_table/                    # 哈希表
+│   │   └── bloom_filter/              #   布隆过滤器
+│   ├── cache/                         # 缓存
+│   │   └── lru_cache/                 #   LRU 缓存
 │   ├── heap/                          # 堆
 │   │   ├── max_heap/                  #   最大堆
 │   │   └── min_heap/                  #   最小堆
@@ -78,14 +89,14 @@ data-structures-and-algorithms/
 │   ├── algorithms/                    #   算法与数据结构 Python 实现
 │   │   ├── sorting/                   #     排序算法（10 种）
 │   │   ├── searching/                 #     搜索算法（4 种）
-│   │   ├── string_algorithm/          #     字符串算法（6 种）
-│   │   ├── dynamic_programming/       #     动态规划（9 种）
+│   │   ├── string_algorithm/          #     字符串算法（8 种）
+│   │   ├── dynamic_programming/       #     动态规划（11 种）
 │   │   ├── greedy/                    #     贪心算法（3 种）
 │   │   ├── backtracking/              #     回溯法（4 种）
 │   │   ├── divide_and_conquer/        #     分治法（2 种）
-│   │   ├── data_structures/           #     数据结构（18 种）
+│   │   ├── data_structures/           #     数据结构（23 种）
 │   │   ├── bit_manipulation/          #     位运算
-│   │   └── run_all.py                 #     一键测试（57 个模块）
+│   │   └── run_all.py                 #     一键测试（74 个模块）
 │   ├── sorting_comparison.py          #   排序性能比较
 │   ├── search_comparison.py           #   搜索性能比较
 │   ├── dp_verify.py                   #   DP 正确性验证
@@ -172,7 +183,7 @@ g++ -std=c++17 -Wall -Wextra -o output src/path/to/file.cpp
 ### 运行自检测试
 
 ```bash
-gcc tests/test_circular_queue.c src/queue/circular_queue/circular_queue.c -I tests -o test_cq
+gcc tests/test_circular_queue.c src/queue/circular_queue/08_circular_queue.c -I tests -o test_cq
 ./test_cq
 ```
 
@@ -202,6 +213,10 @@ gcc tests/test_circular_queue.c src/queue/circular_queue/circular_queue.c -I tes
 | 邻接表 | `src/graph/adjacency_list/` | 图的邻接表表示 |
 | 并查集 | `src/graph/union_find/` | 路径压缩+按秩合并 |
 | 哈希表 | `src/hash_table/` | 链地址法与开放地址法 |
+| 布隆过滤器 | `src/hash_table/bloom_filter/` | 概率性集合成员判定 |
+| LRU 缓存 | `src/cache/lru_cache/` | 最近最少使用缓存淘汰 |
+| 线段树 | `src/tree/segment_tree/` | 区间查询与单点更新 |
+| 树状数组 | `src/tree/fenwick_tree/` | 前缀和与单点更新 |
 | 堆 | `src/heap/` | 最大堆与最小堆 |
 
 ### 算法
@@ -217,6 +232,7 @@ gcc tests/test_circular_queue.c src/queue/circular_queue/circular_queue.c -I tes
 | 贪心 | `src/advanced_algorithm/greedy/` | 活动选择/分数背包/区间调度 |
 | 回溯 | `src/advanced_algorithm/backtracking/` | N 皇后/全排列/组合 |
 | 分治 | `src/advanced_algorithm/divide_and_conquer/` | 最大子数组/最近点对 |
+| 图算法 | `src/graph/` | 拓扑排序/Dijkstra/Bellman-Ford/Floyd-Warshall/Kruskal/Prim |
 
 ### Python 实现
 
@@ -224,13 +240,15 @@ gcc tests/test_circular_queue.c src/queue/circular_queue/circular_queue.c -I tes
 |------|------|------|
 | 排序 | `python/algorithms/sorting/` | 10 种排序算法（冒泡/选择/插入/希尔/快排/归并/堆排/计数/基数/桶排序） |
 | 搜索 | `python/algorithms/searching/` | 4 种搜索算法（线性/二分/插值/斐波那契） |
-| 字符串 | `python/algorithms/string_algorithm/` | 6 种字符串算法（暴力/KMP/RK/BM/Manacher/LCS） |
-| 动态规划 | `python/algorithms/dynamic_programming/` | 9 个经典 DP 问题 |
+| 字符串 | `python/algorithms/string_algorithm/` | 8 种字符串算法（暴力/KMP/RK/BM/Manacher/LCS/滚动哈希/Z算法） |
+| 动态规划 | `python/algorithms/dynamic_programming/` | 11 个经典 DP 问题 |
 | 贪心 | `python/algorithms/greedy/` | 活动选择/分数背包/区间调度 |
 | 回溯 | `python/algorithms/backtracking/` | N 皇后/全排列/组合/子集和 |
 | 分治 | `python/algorithms/divide_and_conquer/` | 最大子数组/最近点对 |
-| 数据结构 | `python/algorithms/data_structures/` | 18 种数据结构 Python 实现 |
+| 数据结构 | `python/algorithms/data_structures/` | 23 种数据结构 Python 实现 |
 | 位运算 | `python/algorithms/bit_manipulation/` | 位操作技巧 |
+| 图算法 | `python/algorithms/graph/` | 6 种图算法（拓扑排序/Dijkstra/Bellman-Ford/Floyd-Warshall/Kruskal/Prim） |
+| 数学算法 | `python/algorithms/math_algorithm/` | 素数判定/数论/筛法 |
 
 运行 Python 算法测试：
 
