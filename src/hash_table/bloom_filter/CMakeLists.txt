@@ -1,0 +1,2 @@
+add_executable(19_bloom_filter 19_bloom_filter_main.cpp 19_bloom_filter.cpp)
+target_compile_features(19_bloom_filter PRIVATE cxx_std_17)

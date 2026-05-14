@@ -31,18 +31,23 @@ jobs:
       - name: Build
         run: cmake --build build
 
-      - name: Run self-tests
-        run: cmake --build build --target test || true
+      - name: Run C++ tests
+        run: cd build && ctest --output-on-failure
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Run Python algorithm tests
+      - name: Run Python import tests
         run: |
           cd python
           python -m algorithms.run_all
+
+      - name: Run Python unittest verification
+        run: |
+          cd python
+          python -m algorithms.run_all --verify
 
   macos-clang:
     runs-on: macos-latest
@@ -66,18 +71,23 @@ jobs:
       - name: Build
         run: cmake --build build
 
-      - name: Run self-tests
-        run: cmake --build build --target test || true
+      - name: Run C++ tests
+        run: cd build && ctest --output-on-failure
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Run Python algorithm tests
+      - name: Run Python import tests
         run: |
           cd python
           python -m algorithms.run_all
+
+      - name: Run Python unittest verification
+        run: |
+          cd python
+          python -m algorithms.run_all --verify
 
   windows-msvc:
     runs-on: windows-latest
@@ -101,15 +111,20 @@ jobs:
       - name: Build
         run: cmake --build build --config Release
 
-      - name: Run self-tests
-        run: cmake --build build --config Release --target test || true
+      - name: Run C++ tests
+        run: cd build && ctest -C Release --output-on-failure
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Run Python algorithm tests
+      - name: Run Python import tests
         run: |
           cd python
           python -m algorithms.run_all
+
+      - name: Run Python unittest verification
+        run: |
+          cd python
+          python -m algorithms.run_all --verify

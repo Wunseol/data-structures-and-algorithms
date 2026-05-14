@@ -1,76 +1,96 @@
 """一键运行所有 Python 算法模块的测试
 
-用法: python -m algorithms.run_all
-  或: python python/algorithms/run_all.py
+用法:
+  python -m algorithms.run_all          # 导入测试（默认）
+  python -m algorithms.run_all --verify # 运行 unittest 验证
+  python python/algorithms/run_all.py --verify
 """
 
 import importlib
 import sys
 import time
+import unittest
 from pathlib import Path
 
 MODULES = [
-    "algorithms.sorting.bubble_sort",
-    "algorithms.sorting.insertion_sort",
-    "algorithms.sorting.selection_sort",
-    "algorithms.sorting.shell_sort",
-    "algorithms.sorting.quick_sort",
-    "algorithms.sorting.merge_sort",
-    "algorithms.sorting.heap_sort",
-    "algorithms.sorting.counting_sort",
-    "algorithms.sorting.radix_sort",
-    "algorithms.sorting.bucket_sort",
-    "algorithms.searching.linear_search",
-    "algorithms.searching.binary_search",
-    "algorithms.searching.interpolation_search",
-    "algorithms.searching.fibonacci_search",
-    "algorithms.string_algorithm.brute_force",
-    "algorithms.string_algorithm.kmp",
-    "algorithms.string_algorithm.rabin_karp",
-    "algorithms.string_algorithm.boyer_moore",
-    "algorithms.string_algorithm.manacher",
-    "algorithms.string_algorithm.lcs",
-    "algorithms.dynamic_programming.fibonacci",
-    "algorithms.dynamic_programming.climbing_stairs",
-    "algorithms.dynamic_programming.coin_change",
-    "algorithms.dynamic_programming.edit_distance",
-    "algorithms.dynamic_programming.house_robber",
-    "algorithms.dynamic_programming.knapsack_01",
-    "algorithms.dynamic_programming.knapsack_complete",
-    "algorithms.dynamic_programming.lis",
-    "algorithms.dynamic_programming.max_subarray",
-    "algorithms.greedy.activity_selection",
-    "algorithms.greedy.fractional_knapsack",
-    "algorithms.greedy.interval_scheduling",
-    "algorithms.backtracking.n_queens",
-    "algorithms.backtracking.permutations",
-    "algorithms.backtracking.combinations",
-    "algorithms.backtracking.subset_sum",
-    "algorithms.divide_and_conquer.closest_pair",
-    "algorithms.divide_and_conquer.max_subarray_dc",
-    "algorithms.data_structures.sequential_list",
-    "algorithms.data_structures.singly_linked_list",
-    "algorithms.data_structures.doubly_linked_list",
-    "algorithms.data_structures.circular_linked_list",
-    "algorithms.data_structures.skip_list",
-    "algorithms.data_structures.stack",
-    "algorithms.data_structures.queue",
-    "algorithms.data_structures.binary_tree",
-    "algorithms.data_structures.binary_search_tree",
-    "algorithms.data_structures.avl_tree",
-    "algorithms.data_structures.trie",
-    "algorithms.data_structures.adjacency_matrix",
-    "algorithms.data_structures.adjacency_list",
-    "algorithms.data_structures.union_find",
-    "algorithms.data_structures.hash_table_chaining",
-    "algorithms.data_structures.hash_table_open_addressing",
-    "algorithms.data_structures.max_heap",
-    "algorithms.data_structures.min_heap",
-    "algorithms.bit_manipulation.bit_tricks",
+    "algorithms.data_structures.L01_sequential_list",
+    "algorithms.sorting.L02_bubble_sort",
+    "algorithms.sorting.L02_selection_sort",
+    "algorithms.sorting.L02_insertion_sort",
+    "algorithms.sorting.L02_shell_sort",
+    "algorithms.sorting.L02_quick_sort",
+    "algorithms.sorting.L02_merge_sort",
+    "algorithms.sorting.L02_heap_sort",
+    "algorithms.sorting.L02_counting_sort",
+    "algorithms.sorting.L02_radix_sort",
+    "algorithms.sorting.L02_bucket_sort",
+    "algorithms.searching.L03_linear_search",
+    "algorithms.searching.L03_binary_search",
+    "algorithms.searching.L03_interpolation_search",
+    "algorithms.searching.L03_fibonacci_search",
+    "algorithms.data_structures.L04_singly_linked_list",
+    "algorithms.data_structures.L05_doubly_linked_list",
+    "algorithms.data_structures.L06_circular_linked_list",
+    "algorithms.data_structures.L07_stack",
+    "algorithms.data_structures.L08_queue",
+    "algorithms.data_structures.L09_skip_list",
+    "algorithms.data_structures.L10_binary_tree",
+    "algorithms.data_structures.L11_binary_search_tree",
+    "algorithms.data_structures.L12_avl_tree",
+    "algorithms.data_structures.L14_trie",
+    "algorithms.data_structures.L15_max_heap",
+    "algorithms.data_structures.L15_min_heap",
+    "algorithms.data_structures.L16_segment_tree",
+    "algorithms.data_structures.L17_fenwick_tree",
+    "algorithms.data_structures.L18_hash_table_chaining",
+    "algorithms.data_structures.L18_hash_table_open_addressing",
+    "algorithms.data_structures.L19_bloom_filter",
+    "algorithms.data_structures.L20_lru_cache",
+    "algorithms.data_structures.L21_adjacency_matrix",
+    "algorithms.data_structures.L22_adjacency_list",
+    "algorithms.data_structures.L23_union_find",
+    "algorithms.graph.L24_topological_sort",
+    "algorithms.graph.L25_dijkstra",
+    "algorithms.graph.L26_bellman_ford",
+    "algorithms.graph.L27_floyd_warshall",
+    "algorithms.graph.L28_kruskal",
+    "algorithms.graph.L29_prim",
+    "algorithms.string_algorithm.L30_brute_force",
+    "algorithms.string_algorithm.L30_kmp",
+    "algorithms.string_algorithm.L30_rabin_karp",
+    "algorithms.string_algorithm.L30_boyer_moore",
+    "algorithms.string_algorithm.L30_manacher",
+    "algorithms.string_algorithm.L30_lcs",
+    "algorithms.string_algorithm.L30_rolling_hash",
+    "algorithms.string_algorithm.L30_z_algorithm",
+    "algorithms.dynamic_programming.L31_fibonacci",
+    "algorithms.dynamic_programming.L31_climbing_stairs",
+    "algorithms.dynamic_programming.L31_coin_change",
+    "algorithms.dynamic_programming.L31_edit_distance",
+    "algorithms.dynamic_programming.L31_house_robber",
+    "algorithms.dynamic_programming.L31_knapsack_01",
+    "algorithms.dynamic_programming.L31_knapsack_complete",
+    "algorithms.dynamic_programming.L31_lis",
+    "algorithms.dynamic_programming.L31_max_subarray",
+    "algorithms.dynamic_programming.L31_lcs_dp",
+    "algorithms.dynamic_programming.L31_matrix_chain",
+    "algorithms.greedy.L32_activity_selection",
+    "algorithms.greedy.L32_fractional_knapsack",
+    "algorithms.greedy.L32_interval_scheduling",
+    "algorithms.divide_and_conquer.L33_closest_pair",
+    "algorithms.divide_and_conquer.L33_max_subarray_dc",
+    "algorithms.backtracking.L34_n_queens",
+    "algorithms.backtracking.L34_permutations",
+    "algorithms.backtracking.L34_combinations",
+    "algorithms.backtracking.L34_subset_sum",
+    "algorithms.bit_manipulation.L35_bit_tricks",
+    "algorithms.math_algorithm.L36_prime",
+    "algorithms.math_algorithm.L36_number_theory",
+    "algorithms.math_algorithm.L36_sieve",
 ]
 
 
-def run_all() -> None:
+def run_import_test() -> None:
     python_dir = Path(__file__).resolve().parent.parent
     if str(python_dir) not in sys.path:
         sys.path.insert(0, str(python_dir))
@@ -105,6 +125,38 @@ def run_all() -> None:
         for err in errors:
             print(f"  - {err}")
         sys.exit(1)
+
+
+def run_verify() -> None:
+    python_dir = Path(__file__).resolve().parent.parent
+    if str(python_dir) not in sys.path:
+        sys.path.insert(0, str(python_dir))
+
+    tests_dir = str(Path(__file__).resolve().parent.parent / "tests")
+    loader = unittest.TestLoader()
+    suite = loader.discover(tests_dir, pattern="test_*.py")
+
+    print(f"{'='*60}")
+    print(f"  Python unittest 验证测试")
+    print(f"{'='*60}\n")
+
+    runner = unittest.TextTestRunner(verbosity=2)
+    result = runner.run(suite)
+
+    print(f"\n{'='*60}")
+    print(f"  结果: {result.testsRun - len(result.failures) - len(result.errors)} 通过, "
+          f"{len(result.failures)} 失败, {len(result.errors)} 错误 / 共 {result.testsRun} 个测试")
+    print(f"{'='*60}")
+
+    if not result.wasSuccessful():
+        sys.exit(1)
+
+
+def run_all() -> None:
+    if "--verify" in sys.argv:
+        run_verify()
+    else:
+        run_import_test()
 
 
 if __name__ == "__main__":

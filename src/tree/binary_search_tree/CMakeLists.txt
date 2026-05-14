@@ -1,2 +1,2 @@
-add_executable(bst_crud bst_crud.cpp)
-target_compile_features(bst_crud PRIVATE cxx_std_17)
+add_executable(11_bst_crud 11_bst_crud.cpp)
+target_compile_features(11_bst_crud PRIVATE cxx_std_17)

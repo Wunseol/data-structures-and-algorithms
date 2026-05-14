@@ -1,5 +1,5 @@
-﻿#include "self_test.h"
-#include "../src/queue/circular_queue/circular_queue.h"
+#include "self_test.h"
+#include "../src/queue/circular_queue/08_circular_queue.h"
 
 int main(void) {
     TEST_BEGIN("Circular Queue");

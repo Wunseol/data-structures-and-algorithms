@@ -7,6 +7,8 @@ from algorithms import backtracking
 from algorithms import divide_and_conquer
 from algorithms import data_structures
 from algorithms import bit_manipulation
+from algorithms import math_algorithm
+from algorithms import graph
 
 __all__ = [
     "sorting",
@@ -18,4 +20,6 @@ __all__ = [
     "divide_and_conquer",
     "data_structures",
     "bit_manipulation",
+    "math_algorithm",
+    "graph",
 ]

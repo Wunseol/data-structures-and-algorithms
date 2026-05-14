@@ -1,11 +1,11 @@
-add_executable(sequential_list_sorting sequential_list_sorting.cpp)
-target_compile_features(sequential_list_sorting PRIVATE cxx_std_17)
+add_executable(02_sequential_list_sorting 02_sequential_list_sorting.cpp)
+target_compile_features(02_sequential_list_sorting PRIVATE cxx_std_17)
 
-add_executable(counting_sort counting_sort.cpp)
-target_compile_features(counting_sort PRIVATE cxx_std_17)
+add_executable(02_counting_sort 02_counting_sort.cpp)
+target_compile_features(02_counting_sort PRIVATE cxx_std_17)
 
-add_executable(radix_sort radix_sort.cpp)
-target_compile_features(radix_sort PRIVATE cxx_std_17)
+add_executable(02_radix_sort 02_radix_sort.cpp)
+target_compile_features(02_radix_sort PRIVATE cxx_std_17)
 
-add_executable(bucket_sort bucket_sort.cpp)
-target_compile_features(bucket_sort PRIVATE cxx_std_17)
+add_executable(02_bucket_sort 02_bucket_sort.cpp)
+target_compile_features(02_bucket_sort PRIVATE cxx_std_17)

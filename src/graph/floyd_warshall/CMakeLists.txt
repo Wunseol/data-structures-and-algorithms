@@ -1,0 +1,2 @@
+add_executable(27_floyd_warshall 27_floyd_warshall_main.cpp 27_floyd_warshall.cpp)
+target_compile_features(27_floyd_warshall PRIVATE cxx_std_17)

@@ -1,2 +1,4 @@
-add_executable(hash_table hash_table_main.c hash_table_chaining.c hash_table_open_addressing.c)
-target_compile_features(hash_table PRIVATE c_std_17)
+add_executable(18_hash_table 18_hash_table_main.c 18_hash_table_chaining.c 18_hash_table_open_addressing.c)
+target_compile_features(18_hash_table PRIVATE c_std_17)
+
+add_subdirectory(bloom_filter)

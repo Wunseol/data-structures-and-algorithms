@@ -1,0 +1,2 @@
+add_executable(17_fenwick_tree 17_fenwick_tree_main.cpp 17_fenwick_tree.cpp)
+target_compile_features(17_fenwick_tree PRIVATE cxx_std_17)

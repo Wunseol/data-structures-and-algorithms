@@ -8,12 +8,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_compile_options(-Wall -Wextra)
 
+enable_testing()
+
 add_subdirectory(src/linear_list)
 add_subdirectory(src/stack)
 add_subdirectory(src/queue)
 add_subdirectory(src/tree)
 add_subdirectory(src/graph)
 add_subdirectory(src/hash_table)
+add_subdirectory(src/cache)
 add_subdirectory(src/heap)
 add_subdirectory(src/sorting)
 add_subdirectory(src/searching)

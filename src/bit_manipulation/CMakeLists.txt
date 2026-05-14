@@ -1,2 +1,2 @@
-add_executable(bit_manipulation bit_manipulation_main.cpp bit_manipulation.cpp)
-target_compile_features(bit_manipulation PRIVATE cxx_std_17)
+add_executable(35_bit_manipulation 35_bit_manipulation_main.cpp 35_bit_manipulation.cpp)
+target_compile_features(35_bit_manipulation PRIVATE cxx_std_17)

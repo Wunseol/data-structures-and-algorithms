@@ -1,2 +1,2 @@
-add_executable(deque deque_main.cpp deque.cpp)
-target_compile_features(deque PRIVATE cxx_std_17)
+add_executable(08_deque 08_deque_main.cpp 08_deque.cpp)
+target_compile_features(08_deque PRIVATE cxx_std_17)

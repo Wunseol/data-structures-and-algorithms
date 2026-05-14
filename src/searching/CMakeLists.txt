@@ -1,14 +1,14 @@
-add_executable(searching search_main.cpp)
-target_compile_features(searching PRIVATE cxx_std_17)
+add_executable(03_searching 03_search_main.cpp)
+target_compile_features(03_searching PRIVATE cxx_std_17)
 
-add_executable(binary_search binary_search.cpp)
-target_compile_features(binary_search PRIVATE cxx_std_17)
+add_executable(03_binary_search 03_binary_search.cpp)
+target_compile_features(03_binary_search PRIVATE cxx_std_17)
 
-add_executable(linear_search linear_search.cpp)
-target_compile_features(linear_search PRIVATE cxx_std_17)
+add_executable(03_linear_search 03_linear_search.cpp)
+target_compile_features(03_linear_search PRIVATE cxx_std_17)
 
-add_executable(interpolation_search interpolation_search.cpp)
-target_compile_features(interpolation_search PRIVATE cxx_std_17)
+add_executable(03_interpolation_search 03_interpolation_search.cpp)
+target_compile_features(03_interpolation_search PRIVATE cxx_std_17)
 
-add_executable(fibonacci_search fibonacci_search.cpp)
-target_compile_features(fibonacci_search PRIVATE cxx_std_17)
+add_executable(03_fibonacci_search 03_fibonacci_search.cpp)
+target_compile_features(03_fibonacci_search PRIVATE cxx_std_17)

@@ -1,2 +1,2 @@
-add_executable(adjacency_list adjacency_list_main.c adjacency_list.c)
-target_compile_features(adjacency_list PRIVATE c_std_17)
+add_executable(22_adjacency_list 22_adjacency_list_main.c 22_adjacency_list.c)
+target_compile_features(22_adjacency_list PRIVATE c_std_17)

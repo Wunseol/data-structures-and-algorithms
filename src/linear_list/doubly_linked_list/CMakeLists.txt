@@ -1,2 +1,2 @@
-add_executable(doubly_linked_list doubly_linked_list_main.c doubly_linked_list.c)
-target_compile_features(doubly_linked_list PRIVATE c_std_17)
+add_executable(05_doubly_linked_list 05_doubly_linked_list_main.c 05_doubly_linked_list.c)
+target_compile_features(05_doubly_linked_list PRIVATE c_std_17)

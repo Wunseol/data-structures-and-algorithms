@@ -1,2 +1,2 @@
-add_executable(huffman_tree huffman_tree_main.cpp huffman_tree.cpp)
-target_compile_features(huffman_tree PRIVATE cxx_std_17)
+add_executable(13_huffman_tree 13_huffman_tree_main.cpp 13_huffman_tree.cpp)
+target_compile_features(13_huffman_tree PRIVATE cxx_std_17)

@@ -1,0 +1,2 @@
+add_executable(25_dijkstra 25_dijkstra_main.cpp 25_dijkstra.cpp)
+target_compile_features(25_dijkstra PRIVATE cxx_std_17)

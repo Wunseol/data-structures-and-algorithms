@@ -1,0 +1,2 @@
+add_executable(26_bellman_ford 26_bellman_ford_main.cpp 26_bellman_ford.cpp)
+target_compile_features(26_bellman_ford PRIVATE cxx_std_17)

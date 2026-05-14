@@ -1,2 +1,2 @@
-add_executable(circular_queue circular_queue_main.c circular_queue.c)
-target_compile_features(circular_queue PRIVATE c_std_17)
+add_executable(08_circular_queue 08_circular_queue_main.c 08_circular_queue.c)
+target_compile_features(08_circular_queue PRIVATE c_std_17)

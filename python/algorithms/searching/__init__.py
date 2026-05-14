@@ -1,10 +1,10 @@
-from algorithms.searching.linear_search import linear_search
-from algorithms.searching.linear_search import sentinel_linear_search
-from algorithms.searching.binary_search import binary_search
-from algorithms.searching.binary_search import binary_search_left
-from algorithms.searching.binary_search import binary_search_right
-from algorithms.searching.interpolation_search import interpolation_search
-from algorithms.searching.fibonacci_search import fibonacci_search
+from algorithms.searching.L03_linear_search import linear_search
+from algorithms.searching.L03_linear_search import sentinel_linear_search
+from algorithms.searching.L03_binary_search import binary_search
+from algorithms.searching.L03_binary_search import binary_search_left
+from algorithms.searching.L03_binary_search import binary_search_right
+from algorithms.searching.L03_interpolation_search import interpolation_search
+from algorithms.searching.L03_fibonacci_search import fibonacci_search
 
 __all__ = [
     "linear_search",

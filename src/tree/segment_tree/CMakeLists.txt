@@ -1,0 +1,2 @@
+add_executable(16_segment_tree 16_segment_tree_main.cpp 16_segment_tree.cpp)
+target_compile_features(16_segment_tree PRIVATE cxx_std_17)

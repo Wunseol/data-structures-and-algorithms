@@ -1,0 +1,2 @@
+add_executable(20_lru_cache 20_lru_cache_main.cpp 20_lru_cache.cpp)
+target_compile_features(20_lru_cache PRIVATE cxx_std_17)

@@ -1,0 +1,2 @@
+add_executable(24_topological_sort 24_topological_sort_main.cpp 24_topological_sort.cpp)
+target_compile_features(24_topological_sort PRIVATE cxx_std_17)

@@ -1,2 +1,2 @@
-add_executable(circular_linked_list circular_linked_list_main.c circular_linked_list.c)
-target_compile_features(circular_linked_list PRIVATE c_std_17)
+add_executable(06_circular_linked_list 06_circular_linked_list_main.c 06_circular_linked_list.c)
+target_compile_features(06_circular_linked_list PRIVATE c_std_17)

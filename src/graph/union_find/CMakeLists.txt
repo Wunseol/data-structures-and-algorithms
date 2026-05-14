@@ -1,2 +1,2 @@
-add_executable(union_find union_find_main.c union_find.c)
-target_compile_features(union_find PRIVATE c_std_17)
+add_executable(23_union_find 23_union_find_main.c 23_union_find.c)
+target_compile_features(23_union_find PRIVATE c_std_17)
