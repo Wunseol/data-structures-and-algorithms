@@ -1,6 +1,5 @@
 # Data Structures and Algorithms
 
-[![CI](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/data-structures-and-algorithms/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 数据结构与算法学习项目，涵盖常用数据结构的 C/C++ 与 Python 实现及经典算法的多种解法。
